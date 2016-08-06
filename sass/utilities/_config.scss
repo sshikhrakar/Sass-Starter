@@ -1,0 +1,77 @@
+//Web Address
+$domain-name: "www.domain-name.com";
+
+//Text
+$base__font-size: 16px;
+$base__line: 24px;
+
+//Font Stacks
+
+//$font-url--google : abc;
+
+// $typefaces
+// Configuration of webfonts imports.
+// $typefaces - {map}
+// @family - {string}
+// @weight - {integer} or {keyword} i.e. 800, bold
+// @style - {keyword} i.e. normal, italic
+
+//$typefaces: (
+//  'FILENAME': (
+//    family: 'fontname',
+//    weight: 100,
+//    style: normal,
+//  ),
+//);
+
+$font-family-sans-fallback: 'Arial', sans-serif;
+$font-family-sans: 'Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
+$font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+$font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
+$font-family--primary : $font-family-sans;
+$font-family--secondary : $font-family-sans;
+
+//Colors
+$white: #fff;
+$black: #000;
+$gray: #d4d4d4;
+
+//Message Colors
+$error: lighten(rgb(254,40,81),15%) !default;
+$success: lighten(#27ae60, 30%) !default;
+$edit: rgba(255, 226, 109, 0.3) !default;
+
+//Breakpoints
+$sm-device: 768px;
+$md-device: 992px;
+$lg-device: 1200px;
+
+//UI Colors
+$ui-colors: (
+	default: $blue,
+	success: $black,
+	error: $red,
+	warning: $orange
+);
+
+//Font variables
+$default-font-size: $base__font-size - 2px;
+$small-font-size: $default-font-size - 2px;
+$lg-font-size: $default-font-size + 2px;
+
+//Heading Vairables
+$heading-line-height: 28px !default;
+$head1-font-size: 26px !default;
+$head2-font-size: $head1-font-size - 4px !default;
+$head3-font-size: $head1-font-size - 8px !default;
+
+//Color Usage
+$primary-color: $white;
+$secondary-color: $black;
+$accent-color: $gray;
+$shadow-color: rgba($black, .2);
+$color-text: $black;
+$color-link: $blue;
+
+//Path to Assets
+$path--rel: "../images";
