@@ -41,7 +41,7 @@ $error: lighten(rgb(254,40,81),15%) !default;
 $success: lighten(#27ae60, 30%) !default;
 $edit: rgba(255, 226, 109, 0.3) !default;
 
-//Breakpoints
+//Bootstrap Breakpoints
 $sm-device: 768px;
 $md-device: 992px;
 $lg-device: 1200px;
@@ -49,9 +49,9 @@ $lg-device: 1200px;
 //UI Colors
 $ui-colors: (
 	default: $blue,
-	success: $black,
-	error: $red,
-	warning: $orange
+	success: $success,
+	error: $error,
+	warning: $edit
 );
 
 //Font variables

@@ -25,6 +25,11 @@
   @return ($size/$base__font-size) * 1rem;
 }
 
+//Calculate %age values
+@function pntg($target, $context){
+	@return ($target/$context) * 100%;
+}
+
 //Color Palette
 @function palette($palette, $shade: base){
 	@return map-get(map-get($palettes, $palette), $shade);
