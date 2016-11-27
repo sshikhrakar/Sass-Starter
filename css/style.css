@@ -1672,6 +1672,15 @@ img {
   max-width: 100%;
   vertical-align: top; }
 
+.btn--default {
+  background: blue; }
+.btn--success {
+  background: #89e5b0; }
+.btn--error {
+  background: #fe748f; }
+.btn--warning {
+  background: rgba(255, 226, 109, 0.3); }
+
 @media (min-width: 1px) and (max-width: 767px) {
   .is-collapsed-mobile {
     visibility: collapse;
