@@ -37,7 +37,7 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0;
 }
 h1{
-	font-size: rem(50);
+	font-size: $head1-font-size;
 }
 h2{
 	font-size: $head2-font-size;
