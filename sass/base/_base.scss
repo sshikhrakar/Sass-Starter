@@ -1,4 +1,6 @@
 *{
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	&:after{
 		clear: both;
@@ -32,9 +34,10 @@ ul,ol{
 h1,h2,h3,h4,h5,h6{
 	font-family: $font-family--primary;
 	font-weight: normal;
+	margin: 0;
 }
 h1{
-	font-size: $head1-font-size;
+	font-size: rem(50);
 }
 h2{
 	font-size: $head2-font-size;

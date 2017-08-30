@@ -15,14 +15,25 @@
   }
 }
 
+@function addPxUnit($value){
+	@if unitless($value) {
+		$value: $value * 1px;
+	}
+	@return $value;
+}
+
 //Calculate em values
 @function em($target, $context: $base__font-size){
+	$target: addPxUnit($target);
+	$context: addPxUnit($context);
 	@return($target/$context) * 1em;
 }
 
 //Calculate rem values
-@function rem($size){
-  @return ($size/$base__font-size) * 1rem;
+@function rem($target, $context: $base__font-size){
+	$target: addPxUnit($target);
+	$context: addPxUnit($context);
+  @return $target/$context * 1rem;
 }
 
 //Calculate %age values
@@ -71,12 +82,12 @@
 //Media queries
 @mixin mq($break){
 	@if $break == "sm" {
-		@media(min-width: 1px) and (max-width: $sm-device - 1px){
+		@media(min-width: $sm-device){
 			@content;
 		}
 	}
 	@else if $break == "md" {
-		@media(min-width: $sm-device){
+		@media(min-width: $md-device){
 			@content;
 		}
 	}

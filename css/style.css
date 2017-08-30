@@ -1631,6 +1631,8 @@ a:after, span:after, strong:after {
 
 /* Sass Compiled Css Code Start */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box; }
   *:after {
     clear: both;
@@ -1657,10 +1659,11 @@ ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  margin: 0; }
 
 h1 {
-  font-size: 26px; }
+  font-size: 3.125rem; }
 
 h2 {
   font-size: 22px; }
@@ -1681,7 +1684,7 @@ img {
 .btn--warning {
   background: rgba(255, 226, 109, 0.3); }
 
-@media (min-width: 1px) and (max-width: 767px) {
+@media (min-width: 768px) {
   .is-collapsed-mobile {
     visibility: collapse;
     padding: 0;
@@ -1689,12 +1692,12 @@ img {
     margin: 0;
     line-height: 0; } }
 
-@media (min-width: 1px) and (max-width: 767px) {
+@media (min-width: 768px) {
   .is-displayed-mobile {
     display: block; }
     .is-hidden-mobile {
       display: none; } }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .is-displayed-mobile {
     display: none; } }
 
