@@ -1684,6 +1684,18 @@ img {
 .btn--warning {
   background: rgba(255, 226, 109, 0.3); }
 
+.media-query {
+  font-size: 14px; }
+  @media (min-width: 768px) {
+    .media-query {
+      font-size: 20px; } }
+  @media (min-width: 992px) {
+    .media-query {
+      font-size: 26px; } }
+  @media (min-width: 1200px) {
+    .media-query {
+      font-size: 32px; } }
+
 @media (min-width: 768px) {
   .is-collapsed-mobile {
     visibility: collapse;
