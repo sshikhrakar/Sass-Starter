@@ -55,6 +55,21 @@ $ui-colors: (
 	warning: $edit
 );
 
+//Shades of gray
+$palettes: (
+	gray-shades: (
+	  base: $gray,
+	  dark: darken($gray,20%),
+	  light: lighten($gray,20%)
+	),
+	blue-shades: (
+		base: $blue,
+	  dark: darken($blue,20%),
+	  light: lighten($blue,20%)
+	)
+);
+
+
 //Font variables
 $default-font-size: $base__font-size - 2px;
 $small-font-size: $default-font-size - 2px;

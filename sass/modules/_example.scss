@@ -1,0 +1,49 @@
+.btn{
+  @include bg-colors($ui-colors);
+}
+
+.media-query{
+  font-size: 14px;
+  @include mq(sm){
+    font-size: 20px;
+  }
+  @include mq(md){
+    font-size: 26px;
+  }
+  @include mq(lg){
+    font-size: 32px;
+  }
+}
+
+%palette-props{
+	width: 50px;
+	height: 20px;
+}
+.gray{
+	@include m(base){
+		@extend %palette-props;
+		background: palette(gray-shades);
+	}
+	@include m(dark){
+		@extend %palette-props;
+		background: palette(gray-shades, dark);
+	}
+	@include m(light){
+		@extend %palette-props;
+		background: palette(gray-shades, light);
+	}
+}
+.blue{
+	@include m(base){
+		@extend %palette-props;
+		background: palette(blue-shades);
+	}
+	@include m(dark){
+		@extend %palette-props;
+		background: palette(blue-shades, dark);
+	}
+	@include m(light){
+		@extend %palette-props;
+		background: palette(blue-shades, light);
+	}
+}

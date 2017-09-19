@@ -1,5 +1,8 @@
+//Font Imports
+
+//Provide url in '$font-url--google' variable from '_config.scss' partial
 @if variable-exists(font-url--google){
-	@import url($font-url--google);
+	@import url($font-url--google); // CSS font import from Google CDN
 }
 
 @if variable-exists(typefaces) {
@@ -15,6 +18,11 @@
   }
 }
 
+// Functions
+
+// Add pixel unit
+// $value     - Value for adding px unit
+// @returns   - number
 @function addPxUnit($value){
 	@if unitless($value) {
 		$value: $value * 1px;
@@ -22,41 +30,62 @@
 	@return $value;
 }
 
-//Calculate em values
+// Convert pixels to em
+// $target    - Value to be converted into em
+// $context   - Default: Base font size. Base font size is usually 16px depending on browser defaulr font size
+// @returns   - number
 @function em($target, $context: $base__font-size){
 	$target: addPxUnit($target);
 	$context: addPxUnit($context);
 	@return($target/$context) * 1em;
 }
 
-//Calculate rem values
+// Convert pixels to rem
+// $target    - Value to be converted into rem
+// $context   - Default: Base font size. Base font size is usually 16px depending on browser defaulr font size
+// @returns   - number
 @function rem($target, $context: $base__font-size){
 	$target: addPxUnit($target);
 	$context: addPxUnit($context);
   @return $target/$context * 1rem;
 }
 
-//Calculate %age values
+// Convert pixels to percentage
+// $target    - Value to be converted into percentage
+// $context   - Context on which target needs to be relative to for percentage conversion
+// @returns   - number
 @function pntg($target, $context){
 	@return ($target/$context) * 100%;
 }
 
-//Color Palette
+// Use color palette
+// $palette   - Map required under $palettes map($palettes map is defined under _config.scss partial)
+// $shade     - Key of provide $palette map
+// base       - Default key of $shade under $palette map
+// @returns   - map
 @function palette($palette, $shade: base){
 	@return map-get(map-get($palettes, $palette), $shade);
 }
 
-//Check Even
+// Calculate if number is even or not
+// $number    - Number to be verified
+// @returns   - boolean
 @function even($number){
 	@if $number%2 == 0{
-		@return 1;
+		@return true;
 	}
 	@else{
-		@return 0;
+		@return false;
 	}
 }
 
-//Mixins
+// Mixins
+
+// Map background color to elements
+// $map    - Map containg key value pair for background color
+// $theme  - Key of provided map from $map
+// $color  - Value of provided map from $map
+// @usage  - `.message {@include bg-colors($ui-colors);}`
 @mixin bg-colors($map){
 	@each $theme, $color in $map{
 		&--#{$theme}{
@@ -66,32 +95,39 @@
 }
 
 //BEM(Block Element Modifier) Naming Convention
-//For Element
+// For Element
+// $element  - Just the element name for the parent block (doesn't require the parent Block name)
+// @usage    - `.Nav {@include e(item){...}}`
 @mixin e($element){
 	&__#{$element}{
 		@content;
 	}
 }
-//For Modifiers
+
+// For Modifier
+// $modifier  - Just the modifier name for the parent block or element
+// @usage     - `.Nav {@include e(item) {@include m(active) {...}}}`
 @mixin m($modifier){
 	&--#{$modifier}{
 		@content;
 	}
 }
 
-//Media queries
+// Media Queries
+// $break  - RWD break point values, change them in _config.scss. Default: bootstrap grid
+// @usage  - `.Nav {@include mq(sm) {...}}`
 @mixin mq($break){
-	@if $break == "sm" {
+	@if $break == "sm" {// tablet
 		@media(min-width: $sm-device){
 			@content;
 		}
 	}
-	@else if $break == "md" {
+	@else if $break == "md" {// laptop and desktop
 		@media(min-width: $md-device){
 			@content;
 		}
 	}
-	@else if $break == "lg" {
+	@else if $break == "lg" {// High res desktop and TVs
 		@media(min-width: $lg-device){
 			@content;
 		}
@@ -101,7 +137,8 @@
 	}
 }
 
-//Hover Mixin
+// Hover mixin
+// @usage  - `button {@include hover {...}}`
 @mixin hover {
   &:hover,
   &:active,
@@ -111,6 +148,9 @@
 	}
 }
 
+// Ellipsis mixin
+// $width  - Value of width or max value of cutoff point in px
+// @usage  - `.Text--info {@include ellipsis(120px) {...}}`
 @mixin ellipsis($width){
 	@extend %ellipsis;
 	width : $width;
@@ -122,9 +162,13 @@
   font-size: calculateRem($size);
 }
 
-//Pseudo-elements
+// Pseudo element mixin
+// $el         - provide "before" or "after" string
+// $wl-width   - Width for the pseudo element in px
+// $wl-height  - Height for the pseudo element in px
+// @usage      - `.dropdown {@include psuedo-el('before') {...}}`
 @mixin psuedo-el($el, $el-width: null, $el-height: null){
-	@if $el == ':before' or $el == 'after'{
+	@if $el == 'before' or $el == 'after'{
 		&:#{$el}{
 			@extend %pseudos;
 			width: $el-width;
@@ -135,30 +179,4 @@
 	@else{
 		@warn "#{$el} is not a valid pseudo-element";
 	}
-}
-
-//Set Background
-@mixin bg($img, $repeat: no-repeat, $position: 0 0,  $size: cover){
-	background-image: url('#{$path--rel}/#{$img}');
-	background-repeat: $repeat;
-	background-position: $position;
-	background-size: $size;
-}
-
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-    }
 }

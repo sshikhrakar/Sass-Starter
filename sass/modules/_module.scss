@@ -1,16 +1,1 @@
-.btn{
-  @include bg-colors($ui-colors);
-}
 
-.media-query{
-  font-size: 14px;
-  @include mq(sm){
-    font-size: 20px;
-  }
-  @include mq(md){
-    font-size: 26px;
-  }
-  @include mq(lg){
-    font-size: 32px;
-  }
-}

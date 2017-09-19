@@ -1696,6 +1696,24 @@ img {
     .media-query {
       font-size: 32px; } }
 
+.gray--base, .gray--dark, .gray--light, .blue--base, .blue--dark, .blue--light {
+  width: 50px;
+  height: 20px; }
+
+.gray--base {
+  background: #d4d4d4; }
+.gray--dark {
+  background: #a1a1a1; }
+.gray--light {
+  background: white; }
+
+.blue--base {
+  background: blue; }
+.blue--dark {
+  background: #000099; }
+.blue--light {
+  background: #6666ff; }
+
 @media (min-width: 768px) {
   .is-collapsed-mobile {
     visibility: collapse;
