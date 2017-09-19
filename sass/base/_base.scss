@@ -1,13 +1,25 @@
+// ==========================================================================
+// Base
+// A Base rule is applied to HTML element using an element selector, a
+// descendent selector, or a child selector, along with any pseudo-classes.
+// We cannot reference any element defined here by their respective class or ID name.
+// This defines the default styling for how that element should look.
+// Changes in style other than default should be overwritten using other partials.
+// ==========================================================================
+
+// Reset CSS
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	&:after{
+	&:after{// Global Clearfixing
 		clear: both;
 		content: "";
 		display: block;
 	}
 }
+
+// Base Code
 html, body{
 	font-size: 100%;
 }
@@ -49,6 +61,3 @@ img{
 	max-width: 100%;
 	vertical-align: top;
 }
-
-//Scalable and Modular Architecture for CSS (SMACSS)
-//With SMACSS, we divide our styles into fives categories: base, layout, modules, states, and themes

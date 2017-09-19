@@ -1,3 +1,8 @@
+// ==========================================================================
+// Utilities
+// Define functions and mixins at this partial.
+// ==========================================================================
+
 //Font Imports
 
 //Provide url in '$font-url--google' variable from '_config.scss' partial
@@ -32,7 +37,7 @@
 
 // Convert pixels to em
 // $target    - Value to be converted into em
-// $context   - Default: Base font size. Base font size is usually 16px depending on browser defaulr font size
+// $context   - Default: Base font size. Base font size is usually 16px depending on browser default font size
 // @returns   - number
 @function em($target, $context: $base__font-size){
 	$target: addPxUnit($target);
@@ -42,7 +47,7 @@
 
 // Convert pixels to rem
 // $target    - Value to be converted into rem
-// $context   - Default: Base font size. Base font size is usually 16px depending on browser defaulr font size
+// $context   - Default: Base font size. Base font size is usually 16px depending on browser default font size
 // @returns   - number
 @function rem($target, $context: $base__font-size){
 	$target: addPxUnit($target);

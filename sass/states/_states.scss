@@ -1,3 +1,14 @@
+// ==========================================================================
+// States
+// A state is something that augments and overrides all other styles.
+// Example:
+// 1. Hamburger menu that is displayed only on mobile devices and hidden on desktop. Simply put,
+// the state of the nav menu is to be hidden or visible.
+// 2. Dropdown menu with an active opened state and inactive closed state.
+// 3. States are used as object classes for existing elements.
+// ==========================================================================
+
+// Hidden for mobile devices
 .is-collapsed-mobile {
 	@include mq(sm){
 		visibility: collapse;
@@ -8,6 +19,7 @@
 	}
 }
 
+// Hidden for desktops
 .is-displayed-mobile {
 	@include mq(sm){
 		display: block;

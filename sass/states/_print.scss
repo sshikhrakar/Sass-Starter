@@ -1,6 +1,6 @@
 // ==========================================================================
 // $Print
-// Inlined to avoid required HTTP connection: h5bp.com/r
+// Boilerplate scss code for Printing websites.
 // ==========================================================================
 
 @media print {
@@ -35,7 +35,7 @@
       display: none;
     }
 
-    header{ 
+    header{
       margin-bottom: 40px;
       h1, nav{
         display: none;
@@ -56,7 +56,7 @@
     @page {
       margin: 0.5cm;
     }
-    
+
     h1 {
       font-size: 24pt;
     }

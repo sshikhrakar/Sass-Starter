@@ -1,4 +1,9 @@
-//Web Address
+// ==========================================================================
+// Config
+// Define variables, maps and fonts at this partial.
+// ==========================================================================
+
+//Enter your Web Address here for print media
 $domain-name: "www.domain-name.com";
 
 //Text
@@ -42,7 +47,7 @@ $error: lighten(rgb(254,40,81),15%) !default;
 $success: lighten(#27ae60, 30%) !default;
 $edit: rgba(255, 226, 109, 0.3) !default;
 
-//Bootstrap Breakpoints
+//Breakpoints
 $sm-device: 768px;
 $md-device: 992px;
 $lg-device: 1200px;
@@ -70,12 +75,12 @@ $palettes: (
 );
 
 
-//Font variables
+//Font size variables
 $default-font-size: $base__font-size - 2px;
 $small-font-size: $default-font-size - 2px;
 $lg-font-size: $default-font-size + 2px;
 
-//Heading Vairables
+//Heading font size vairables
 $heading-line-height: 28px !default;
 $head1-font-size: 26px !default;
 $head2-font-size: $head1-font-size - 4px !default;

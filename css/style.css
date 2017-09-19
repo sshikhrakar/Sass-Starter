@@ -1731,6 +1731,89 @@ img {
   .is-displayed-mobile {
     display: none; } }
 
+@media print {
+  *:before, *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  body {
+    font: 12pt "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    line-height: 1.3; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  footer {
+    display: none; }
+
+  header {
+    margin-bottom: 40px; }
+    header h1, header nav {
+      display: none; }
+    header:after {
+      content: "www.domain-name.com"; }
+    header:before {
+      display: block;
+      content: "Thank you for printing our content at www.domain-name.com. Please check back soon for new contents.";
+      margin-bottom: 10px;
+      border: 1px solid #bbb;
+      padding: 6px 8px;
+      font-style: italic; }
+
+  @page {
+    margin: 0.5cm; }
+  h1 {
+    font-size: 24pt; }
+
+  h2 {
+    font-size: 14pt;
+    margin-top: 25px; }
+
+  aside {
+    border-top: 1px solid #bbb;
+    margin-top: 30px;
+    display: block; }
+    aside h2 {
+      font-size: 18pt; }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
 
 
 /*# sourceMappingURL=style.css.map */
