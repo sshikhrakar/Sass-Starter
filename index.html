@@ -10,21 +10,278 @@
 	<!--endbuild-->
 </head>
 <body>
-  <h1>Sass Starter</h1>
-  <button class="btn--default"></button>
-  <button class="btn--success"></button>
-  <button class="btn--error"></button>
-  <button class="btn--warning"></button>
-  <div class="media-query">
-    Font size should change with browser resize.
+  <div class="example-doc">
+    <header>
+      <div class="container">
+        <h1>Sass Starter</h1>
+        <p>SCSS for SMACSS</p>
+        <p>Starter code for SASS based on Scalar and Modular Architecture for CSS (SMACSS). SMACSS (pronounced “smacks”) is more style guide than rigid framework. So, you can customize the structure as you like.</p>
+      </div>
+    </header>
+    <main>
+        <div class="Block">
+          <div class="container">
+            <h2>SASS Folder Structure:</h2>
+            <ul class="tree">
+              <li>
+                sass
+                <ul>
+                  <li>base
+                      <ul>
+                        <li>_base.scss</li>
+                        <li>_manifest.scss</li>
+                      </ul>
+                  </li>
+                  <li>libs
+                    <ul>
+                      <li>_manifest.scss</li>
+                    </ul>
+                  </li>
+                  <li>modules
+                    <ul>
+                      <li>_example.scss</li>
+                      <li>_extends.scss</li>
+                      <li>_manifest.scss</li>
+                      <li>_modules.scss</li>
+                    </ul>
+                  </li>
+                  <li>states
+                    <ul>
+                      <li>_manifest.scss</li>
+                      <li>_print.scss</li>
+                      <li>_states.scss</li>
+                    </ul>
+                  </li>
+                  <li>utilities
+                    <ul>
+                      <li>bootstrap</li>
+                      <li>_bootstrap.scss</li>
+                      <li>_config.scss</li>
+                      <li>_helpers.scss</li>
+                      <li>_manifest.scss</li>
+                      <li>_normalize.scss</li>
+                      <li>_utilities.scss</li>
+                    </ul>
+                  </li>
+                  <li>_shame.scss</li>
+                  <li>style.scss</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="Block">
+          <div class="container">
+            <h2>Using Mixins:</h2>
+            <div class="Block__segment">
+              <h3>Using Media query Mixins:</h3>
+              <p>Find the mixin for media query under utilities/_utilities.scss.
+                 Responsive web design is based on Mobile first.
+                 The media query breakpoints are based on bootstrap breakpoints. Change the breakpoints according to your
+                 needs at utilities/_config.scss
+              </p>
+              <p>HTML:</p>
+              <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
+              <p>SCSS:</p>
+  <pre>.Box{
+    // For mobile devices of size less than 768px put code here
+    width: 20px;
+    height: 20px;
+    background: red;
+    @include mq(sm){// For devices of size greater than 768px(tablets) put code here
+      width: 40px;
+      height: 40px;
+      background: blue;
+    }
+    @include mq(md){// For devices of size greater than 992px(laptops) put code here
+      width: 60px;
+      height: 60px;
+      background: green;
+    }
+    @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
+      width: 80px;
+      height: 80px;
+      background: yellow;
+    }
+  }</pre>
+  <p>CSS Output:</p>
+  <pre>.Box{
+    width: 20px;
+    height: 20px;
+    background: red;
+  }
+  @media(min-width: 768px){
+    .Box{
+      width: 40px;
+      height: 40px;
+      background: blue;
+    }
+  }
+  @media(min-width: 992px){
+    .Box{
+      width: 60px;
+      height: 60px;
+      background: green;
+    }
+  }
+  @media(min-width: 1200px){
+    .Box{
+      width: 80px;
+      height: 80px;
+      background: yellow;
+    }
+  }</pre>
+              <p>Result:</p>
+              <p>Resize browser window to see effect.</p>
+              <div class="Box"></div>
+            </div>
+
+
+            <div class="Block__segment">
+              <h3>Using BEM Mixins:</h3>
+              <p>Find the mixin for BEM under utilities/_utilities.scss.</p>
+
+              <h3>Block</h3>
+              <p>
+                Top-level abstraction of a new component. Is top in the heirarchy for this naming convention. Blocks can
+                be nested with other blocks but they are independent to each other with no precedence it hierrarchy.
+              </p>
+              <p>HTML:</p>
+              <pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
+              <p>SCSS:</p>
+              <p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
+              blocks and html elements.</p>
+  <pre>// Here ".nav" class selector is a Block
+  .Nav {
+    padding: 10px 0;
+  }</pre>
+            <h3>Element</h3>
+            <p>
+              Child elements inside of Block element. Gives specific meaning to child elements. Elements have their
+              meaning always derived from its respective parent block.
+              CSS class is formed as block name plus two underscores plus element name.
+              Example: .block__elem
+              Element naming can also have a single dash. Example: .Patient__info-detail
+            </p>
+            </div>
+  <p>HTML:</p>
+  <pre>&lt;ul class="Nav"&gt;
+    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+  &lt;/ul>
+  </pre>
+  <p>SCSS:</p>
+  <p>
+    Use class name selector only, ids and tags name should not be used. Should be independent from all other
+    blocks and html elements.
+    // Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+  </p>
+  <pre>.Nav{
+    padding: 10px 0;
+    @include e(item){ //'e' is small for element
+      float: left;
+      margin-right: 10px;
+    }
+  }</pre>
+  <p>CSS Output:</p>
+  <pre>//Output is completely independent from the parent block class selectors
+  .Nav {
+    padding: 10px 0;
+  }
+
+  .Nav__item{
+    float: left;
+    margin-right: 10px;
+  }</pre>
+            <h3>Modifier</h3>
+            <p>
+              Modifier is used to modify blocks or elements.
+              CSS class is will be formed by added two dashes to block’s or element’s class name.
+              Example: .block--mod or .block__elem--mod
+              Modifier naming can also have a single dash. Example: .Box__row--gray-bg
+            </p>
+  <p>HTML:</p>
+  <pre>&lt;ul class="Nav"&gt;
+    &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
+    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+  &lt;/ul></pre>
+  <p>SCSS:</p>
+  <p>
+    Use class name selector only, ids and tags name should not be used. Should be independent from all other
+    blocks and html elements.
+    // Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+  </p>
+  <pre>.Nav{
+    padding: 10px 0;
+    @include e(item){
+      float: left;
+      margin-right: 10px;
+      @include m(active){//'m' is small for element. Nest this under element mixin
+        color: blue;
+        font-weight: bold;
+      }
+    }
+  }</pre>
+  <p>CSS Output:</p>
+  <pre>//Output is completely independent from the parent block and element class selectors
+  .Nav {
+    padding: 10px 0;
+  }
+
+  .Nav__item{
+    float: left;
+    margin-right: 10px;
+  }
+
+  .Nav__item--active{
+    color: blue;
+    font-weight: bold;
+  }</pre>
+          </div>
+        </div>
+
+        <div class="Block">
+          <div class="container">
+            <h3>Using Maps:</h3>
+            <div class="Block__segment">
+              <p>Mapping background colors to buttons:</p>
+              <button class="btn btn--default">Default</button>
+              <button class="btn btn--success">Success</button>
+              <button class="btn btn--error">Error</button>
+              <button class="btn btn--warning">Warning</button>
+            </div>
+            <div class="Block__segment">
+              <p>Color Palette generation using nested maps:</p>
+              <div class="col-xs-12 col-sm-6">
+                <div class="gray--dark">Dark</div>
+                <div class="gray--base">Base</div>
+                <div class="gray--light">Light</div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6">
+                <div class="blue--dark">Dark</div>
+                <div class="blue--base">Base</div>
+                <div class="blue--light">Light</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Block">
+          <div class="container">
+
+          </div>
+        </div>
+
+    </main>
+    <footer>
+      <div class="container">
+        <a href="https://github.com/sshikhrakar/Sass-Starter">Github</a>
+      </div>
+    </footer>
   </div>
-
-  <div class="gray--dark">Dark</div>
-  <div class="gray--base">Base</div>
-  <div class="gray--light">Light</div>
-
-  <div class="blue--dark">Dark</div>
-  <div class="blue--base">Base</div>
-  <div class="blue--light">Light</div>
 </body>
 </html>

@@ -1675,43 +1675,92 @@ img {
   max-width: 100%;
   vertical-align: top; }
 
-.btn--default {
-  background: blue; }
-.btn--success {
-  background: #89e5b0; }
-.btn--error {
-  background: #fe748f; }
-.btn--warning {
-  background: rgba(255, 226, 109, 0.3); }
+.example-doc .tree li:before, .example-doc .tree li:after {
+  content: "";
+  position: absolute;
+  background: #d4d4d4;
+  left: -20px; }
 
-.media-query {
-  font-size: 14px; }
+.example-doc .tree {
+  list-style: none;
+  position: relative; }
+  .example-doc .tree ul {
+    position: relative;
+    padding-left: 20px; }
+  .example-doc .tree li {
+    position: relative; }
+    .example-doc .tree li:before {
+      width: 1px;
+      height: 100%;
+      top: 0; }
+    .example-doc .tree li:after {
+      width: 18px;
+      height: 1px;
+      top: 10px; }
+  .example-doc .tree > li:before, .example-doc .tree > li:after {
+    background: none; }
+.example-doc pre {
+  background: #000;
+  border: 1px solid #d4d4d4;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  max-width: 800px;
+  border-radius: 2px;
+  max-height: 200px;
+  overflow-y: auto; }
+.example-doc .Block {
+  margin-top: 20px; }
   @media (min-width: 768px) {
-    .media-query {
-      font-size: 20px; } }
+    .example-doc .Block {
+      margin-top: 30px; } }
+  .example-doc .Block__segment {
+    margin-bottom: 20px; }
+.example-doc .Box {
+  width: 20px;
+  height: 20px;
+  background: red; }
+  @media (min-width: 768px) {
+    .example-doc .Box {
+      width: 40px;
+      height: 40px;
+      background: blue; } }
   @media (min-width: 992px) {
-    .media-query {
-      font-size: 26px; } }
+    .example-doc .Box {
+      width: 60px;
+      height: 60px;
+      background: green; } }
   @media (min-width: 1200px) {
-    .media-query {
-      font-size: 32px; } }
-
-.gray--base, .gray--dark, .gray--light, .blue--base, .blue--dark, .blue--light {
+    .example-doc .Box {
+      width: 80px;
+      height: 80px;
+      background: yellow; } }
+.example-doc .btn {
+  padding: 10px;
+  border: 0;
+  color: #fff; }
+  .example-doc .btn--default {
+    background: blue; }
+  .example-doc .btn--success {
+    background: #89e5b0; }
+  .example-doc .btn--error {
+    background: #fe748f; }
+  .example-doc .btn--warning {
+    background: rgba(255, 226, 109, 0.3); }
+.example-doc .gray--base, .example-doc .gray--dark, .example-doc .gray--light, .example-doc .blue--base, .example-doc .blue--dark, .example-doc .blue--light {
   width: 50px;
   height: 20px; }
-
-.gray--base {
+.example-doc .gray--base {
   background: #d4d4d4; }
-.gray--dark {
+.example-doc .gray--dark {
   background: #a1a1a1; }
-.gray--light {
+.example-doc .gray--light {
   background: white; }
-
-.blue--base {
+.example-doc .blue--base {
   background: blue; }
-.blue--dark {
+.example-doc .blue--dark {
   background: #000099; }
-.blue--light {
+.example-doc .blue--light {
   background: #6666ff; }
 
 @media (min-width: 768px) {

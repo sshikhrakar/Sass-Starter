@@ -4,52 +4,122 @@
 // your project.
 // ==========================================================================
 
-.btn{
-  @include bg-colors($ui-colors);
+%tree-pseudo{
+  content: "";
+  position: absolute;
+  background: $gray;
+  left: -20px;
 }
+.example-doc{
+  .tree{
+    list-style: none;
+    position: relative;
+    ul{
+      position: relative;
+      padding-left: 20px;
+    }
+    li{
+      position: relative;
+      &:before{
+        @extend %tree-pseudo;
+        width: 1px;
+        height: 100%;
+        top: 0;
+      }
+      &:after{
+        @extend %tree-pseudo;
+        width: 18px;
+        height: 1px;
+        top: 10px;
+      }
+    }
+    > li{
+      &:before, &:after{
+        background: none
+      }
+    }
+  }
 
-.media-query{
-  font-size: 14px;
-  @include mq(sm){
-    font-size: 20px;
+  pre{
+    background: $black;
+    border: 1px solid $gray;
+    padding: 10px;
+    font-size: 14px;
+    color: $white;
+    max-width: 800px;
+    border-radius: 2px;
+    max-height: 200px;
+    overflow-y: auto;
   }
-  @include mq(md){
-    font-size: 26px;
-  }
-  @include mq(lg){
-    font-size: 32px;
-  }
-}
 
-%palette-props{
-	width: 50px;
-	height: 20px;
-}
-.gray{
-	@include m(base){
-		@extend %palette-props;
-		background: palette(gray-shades);
-	}
-	@include m(dark){
-		@extend %palette-props;
-		background: palette(gray-shades, dark);
-	}
-	@include m(light){
-		@extend %palette-props;
-		background: palette(gray-shades, light);
-	}
-}
-.blue{
-	@include m(base){
-		@extend %palette-props;
-		background: palette(blue-shades);
-	}
-	@include m(dark){
-		@extend %palette-props;
-		background: palette(blue-shades, dark);
-	}
-	@include m(light){
-		@extend %palette-props;
-		background: palette(blue-shades, light);
-	}
+  .Block{
+    margin-top: 20px;
+    @include mq(sm){
+      margin-top: 30px;
+    }
+    @include e(segment){
+      margin-bottom: 20px;
+    }
+  }
+
+  .Box{
+    // For mobile devices of size less than 768px put code here
+    width: 20px;
+    height: 20px;
+    background: red;
+    @include mq(sm){// For devices of size greater than 768px(tablets) put code here
+      width: 40px;
+      height: 40px;
+      background: blue;
+    }
+    @include mq(md){// For devices of size greater than 992px(laptops) put code here
+      width: 60px;
+      height: 60px;
+      background: green;
+    }
+    @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
+      width: 80px;
+      height: 80px;
+      background: yellow;
+    }
+  }
+  .btn{
+    padding: 10px;
+    border: 0;
+    color: $white;
+    @include bg-colors($ui-colors);
+  }
+
+  %palette-props{
+    width: 50px;
+    height: 20px;
+  }
+  .gray{
+    @include m(base){
+      @extend %palette-props;
+      background: palette(gray-shades);
+    }
+    @include m(dark){
+      @extend %palette-props;
+      background: palette(gray-shades, dark);
+    }
+    @include m(light){
+      @extend %palette-props;
+      background: palette(gray-shades, light);
+    }
+  }
+  .blue{
+    @include m(base){
+      @extend %palette-props;
+      background: palette(blue-shades);
+    }
+    @include m(dark){
+      @extend %palette-props;
+      background: palette(blue-shades, dark);
+    }
+    @include m(light){
+      @extend %palette-props;
+      background: palette(blue-shades, light);
+    }
+  }
 }
