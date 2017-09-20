@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sass Starter</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 	<!--build:css css/style.css-->
   	<link rel="stylesheet" href="css/style.css">
 	<!--endbuild-->
@@ -82,164 +83,181 @@
                  needs at utilities/_config.scss
               </p>
               <p>HTML:</p>
-              <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
+              <pre>&lt;div class="Box"&gt;&lt;/div&gt;lt;div class="Box"&gt;&lt;/div&gt;lt;div class="Box"&gt;&lt;/div&gt;lt;div class="Box"&gt;&lt;/div&gt;</pre>
               <p>SCSS:</p>
-  <pre>.Box{
-    // For mobile devices of size less than 768px put code here
-    width: 20px;
-    height: 20px;
-    background: red;
-    @include mq(sm){// For devices of size greater than 768px(tablets) put code here
-      width: 40px;
-      height: 40px;
-      background: blue;
-    }
-    @include mq(md){// For devices of size greater than 992px(laptops) put code here
-      width: 60px;
-      height: 60px;
-      background: green;
-    }
-    @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
-      width: 80px;
-      height: 80px;
-      background: yellow;
-    }
-  }</pre>
+<pre>.Box{
+  // For mobile devices of size less than 768px put code here
+  width: 20px;
+  height: 20px;
+  background: red;
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+  margin-right: 10px;
+  float: left;
+  @include mq(sm){// For devices of size greater than 768px(tablets) put code here
+    width: 50px;
+    height: 50px;
+    background: blue;
+  }
+  @include mq(md){// For devices of size greater than 992px(laptops) put code here
+    width: 70px;
+    height: 70px;
+    background: green;
+  }
+  @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
+    width: 100px;
+    height: 100px;
+    background: yellow;
+  }
+}</pre>
   <p>CSS Output:</p>
-  <pre>.Box{
-    width: 20px;
-    height: 20px;
-    background: red;
+<pre>.Box{
+  width: 20px;
+  height: 20px;
+  background: red;
+}
+@media(min-width: 768px){
+  .Box{
+    width: 50px;
+    height: 50px;
+    background: blue;
   }
-  @media(min-width: 768px){
-    .Box{
-      width: 40px;
-      height: 40px;
-      background: blue;
-    }
+}
+@media(min-width: 992px){
+  .Box{
+    width: 70px;
+    height: 70px;
+    background: green;
   }
-  @media(min-width: 992px){
-    .Box{
-      width: 60px;
-      height: 60px;
-      background: green;
-    }
+}
+@media(min-width: 1200px){
+  .Box{
+    width: 100px;
+    height: 100px;
+    background: yellow;
   }
-  @media(min-width: 1200px){
-    .Box{
-      width: 80px;
-      height: 80px;
-      background: yellow;
-    }
-  }</pre>
-              <p>Result:</p>
-              <p>Resize browser window to see effect.</p>
-              <div class="Box"></div>
-            </div>
+}</pre>
+  <p>Example:</p>
+  <p>Resize browser window to see effect.</p>
+  <div>
+    <div class="Box"></div>
+    <div class="Box"></div>
+    <div class="Box"></div>
+    <div class="Box"></div>
+  </div>
+</div>
 
 
-            <div class="Block__segment">
-              <h3>Using BEM Mixins:</h3>
-              <p>Find the mixin for BEM under utilities/_utilities.scss.</p>
+<div class="Block__segment">
+  <h3>Using BEM Mixins:</h3>
+  <p>Find the mixin for BEM under utilities/_utilities.scss.</p>
+<div class="dotted">
+<h3>Block</h3>
+<p>
+Top-level abstraction of a new component. Is top in the heirarchy for this naming convention. Blocks can
+be nested with other blocks but they are independent to each other with no precedence it hierrarchy.
+</p>
+<p>HTML:</p>
+<pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
+<p>SCSS:</p>
+<p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
+blocks and html elements.</p>
+<pre>// Here ".nav" class selector is a Block
+.Nav {
+  padding: 10px 0;
+}</pre>
+</div>
 
-              <h3>Block</h3>
-              <p>
-                Top-level abstraction of a new component. Is top in the heirarchy for this naming convention. Blocks can
-                be nested with other blocks but they are independent to each other with no precedence it hierrarchy.
-              </p>
-              <p>HTML:</p>
-              <pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
-              <p>SCSS:</p>
-              <p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
-              blocks and html elements.</p>
-  <pre>// Here ".nav" class selector is a Block
-  .Nav {
-    padding: 10px 0;
-  }</pre>
-            <h3>Element</h3>
-            <p>
-              Child elements inside of Block element. Gives specific meaning to child elements. Elements have their
-              meaning always derived from its respective parent block.
-              CSS class is formed as block name plus two underscores plus element name.
-              Example: .block__elem
-              Element naming can also have a single dash. Example: .Patient__info-detail
-            </p>
-            </div>
-  <p>HTML:</p>
-  <pre>&lt;ul class="Nav"&gt;
-    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-  &lt;/ul>
-  </pre>
-  <p>SCSS:</p>
+<div class="dotted">
+  <h3>Element</h3>
   <p>
-    Use class name selector only, ids and tags name should not be used. Should be independent from all other
-    blocks and html elements.
-    // Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+    Child elements inside of Block element. Gives specific meaning to child elements. Elements have their
+    meaning always derived from its respective parent block.
+    CSS class is formed as block name plus two underscores plus element name.
+    Example: .block__elem
+    Element naming can also have a single dash. Example: .Patient__info-detail
   </p>
-  <pre>.Nav{
-    padding: 10px 0;
-    @include e(item){ //'e' is small for element
-      float: left;
-      margin-right: 10px;
-    }
-  }</pre>
-  <p>CSS Output:</p>
-  <pre>//Output is completely independent from the parent block class selectors
-  .Nav {
-    padding: 10px 0;
-  }
 
-  .Nav__item{
-    float: left;
-    margin-right: 10px;
-  }</pre>
-            <h3>Modifier</h3>
-            <p>
-              Modifier is used to modify blocks or elements.
-              CSS class is will be formed by added two dashes to block’s or element’s class name.
-              Example: .block--mod or .block__elem--mod
-              Modifier naming can also have a single dash. Example: .Box__row--gray-bg
-            </p>
   <p>HTML:</p>
-  <pre>&lt;ul class="Nav"&gt;
-    &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
-    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-    &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-  &lt;/ul></pre>
-  <p>SCSS:</p>
-  <p>
-    Use class name selector only, ids and tags name should not be used. Should be independent from all other
-    blocks and html elements.
-    // Here ".Nav" class selector is a Block and ".Nav__item" is an Element
-  </p>
-  <pre>.Nav{
-    padding: 10px 0;
-    @include e(item){
-      float: left;
-      margin-right: 10px;
-      @include m(active){//'m' is small for element. Nest this under element mixin
-        color: blue;
-        font-weight: bold;
-      }
-    }
-  }</pre>
-  <p>CSS Output:</p>
-  <pre>//Output is completely independent from the parent block and element class selectors
-  .Nav {
-    padding: 10px 0;
-  }
+<pre>&lt;ul class="Nav"&gt;
+  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+&lt;/ul>
+</pre>
+<p>SCSS:</p>
+<p>
+  Use class name selector only, ids and tags name should not be used. Should be independent from all other
+  blocks and html elements.
 
-  .Nav__item{
+</p>
+<pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+.Nav{
+  padding: 10px 0;
+  @include e(item){ //'e' is small for element
     float: left;
     margin-right: 10px;
   }
+}</pre>
+<p>CSS Output:</p>
+<pre>//Output is completely independent from the parent block class selectors
+.Nav {
+  padding: 10px 0;
+}
 
-  .Nav__item--active{
-    color: blue;
-    font-weight: bold;
-  }</pre>
+.Nav__item{
+  float: left;
+  margin-right: 10px;
+}</pre>
+</div>
+
+<div class="dotted">
+<h3>Modifier</h3>
+<p>
+  Modifier is used to modify blocks or elements.
+  CSS class is will be formed by added two dashes to block’s or element’s class name.
+  Example: .block--mod or .block__elem--mod
+  Modifier naming can also have a single dash. Example: .Box__row--gray-bg
+</p>
+<p>HTML:</p>
+<pre>&lt;ul class="Nav"&gt;
+  &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
+  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+&lt;/ul></pre>
+<p>SCSS:</p>
+<p>
+  Use class name selector only, ids and tags name should not be used. Should be independent from all other
+  blocks and html elements.
+</p>
+<pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+.Nav{
+  padding: 10px 0;
+  @include e(item){
+    float: left;
+    margin-right: 10px;
+    @include m(active){//'m' is small for element. Nest this under element mixin
+      color: blue;
+      font-weight: bold;
+    }
+  }
+}</pre>
+<p>CSS Output:</p>
+<pre>//Output is completely independent from the parent block and element class selectors
+.Nav {
+  padding: 10px 0;
+}
+
+.Nav__item{
+  float: left;
+  margin-right: 10px;
+}
+
+.Nav__item--active{
+  color: blue;
+  font-weight: bold;
+}</pre>
+</div>
+            </div>
           </div>
         </div>
 
@@ -267,12 +285,6 @@
                 <div class="blue--light">Light</div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="Block">
-          <div class="container">
-
           </div>
         </div>
 

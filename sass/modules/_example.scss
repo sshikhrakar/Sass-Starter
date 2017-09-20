@@ -3,15 +3,26 @@
 // This is just an example sass file for demo. Please remove this file on
 // your project.
 // ==========================================================================
-
+$bg-black: #2f3233;
 %tree-pseudo{
   content: "";
   position: absolute;
   background: $gray;
   left: -20px;
 }
+header{
+  padding: 15px 0 25px;
+  border-bottom: 1px solid $border-color;
+}
+p{
+  margin-bottom: 10px;
+}
 .example-doc{
   .tree{
+    background: $bg-black;
+    padding: 20px;
+    color: #fff;
+    border-radius: 6px;
     list-style: none;
     position: relative;
     ul{
@@ -41,24 +52,38 @@
   }
 
   pre{
-    background: $black;
-    border: 1px solid $gray;
+    background: $bg-black;
     padding: 10px;
     font-size: 14px;
     color: $white;
     max-width: 800px;
-    border-radius: 2px;
+    border-radius: 6px;
     max-height: 200px;
     overflow-y: auto;
+    margin-bottom: 10px;
   }
 
   .Block{
-    margin-top: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid $border-color;
     @include mq(sm){
-      margin-top: 30px;
+      padding: 30px 0;
     }
     @include e(segment){
+      padding: 20px 0;
+      border-bottom: 1px solid $border-color;
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+    h1{
+      margin-bottom: 30px;
+    }
+    h2{
       margin-bottom: 20px;
+    }
+    h3{
+      margin-bottom: 10px;
     }
   }
 
@@ -66,46 +91,59 @@
     // For mobile devices of size less than 768px put code here
     width: 20px;
     height: 20px;
-    background: red;
+    background: $red;
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+    margin-right: 10px;
+    float: left;
     @include mq(sm){// For devices of size greater than 768px(tablets) put code here
-      width: 40px;
-      height: 40px;
-      background: blue;
+      width: 50px;
+      height: 50px;
+      background: $blue;
     }
     @include mq(md){// For devices of size greater than 992px(laptops) put code here
-      width: 60px;
-      height: 60px;
-      background: green;
+      width: 70px;
+      height: 70px;
+      background: $green;
     }
     @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
-      width: 80px;
-      height: 80px;
-      background: yellow;
+      width: 100px;
+      height: 100px;
+      background: $yellow;
     }
   }
   .btn{
-    padding: 10px;
+    padding: 10px 15px;
     border: 0;
+    border-radius: 2px;
     color: $white;
+    cursor: pointer;
+    font-weight: bold;
     @include bg-colors($ui-colors);
   }
-
+  .dotted{
+    padding: 10px 0;
+    border-bottom: 1px dotted $border-color;
+  }
   %palette-props{
-    width: 50px;
-    height: 20px;
+    padding: 6px;
+    color: $white;
+    text-align: center;
   }
   .gray{
     @include m(base){
       @extend %palette-props;
       background: palette(gray-shades);
+      color: $black;
     }
     @include m(dark){
       @extend %palette-props;
       background: palette(gray-shades, dark);
+      color: $black;
     }
     @include m(light){
       @extend %palette-props;
       background: palette(gray-shades, light);
+      color: $black;
     }
   }
   .blue{
@@ -122,4 +160,7 @@
       background: palette(blue-shades, light);
     }
   }
+}
+footer{
+  padding: 15px 0;
 }

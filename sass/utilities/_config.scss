@@ -30,7 +30,7 @@ $base__line: 24px;
 //);
 
 $font-family-sans-fallback: 'Arial', sans-serif;
-$font-family-sans: 'Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
+$font-family-sans: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
 $font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 $font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
 $font-family--primary : $font-family-sans;
@@ -39,13 +39,16 @@ $font-family--secondary : $font-family-sans;
 //Colors
 $white: #fff;
 $black: #000;
-$gray: #d4d4d4;
-$blue: blue;
+$gray: #e4e4e4;
+$red: #D24D57;
+$blue: #3A539B;
+$yellow: #F7CA18;
+$green: #36D7B7;
 
 //Message Colors
-$error: lighten(rgb(254,40,81),15%) !default;
-$success: lighten(#27ae60, 30%) !default;
-$edit: rgba(255, 226, 109, 0.3) !default;
+$error: lighten($red,5%) !default;
+$success: $green !default;
+$edit: $yellow !default;
 
 //Breakpoints
 $sm-device: 768px;
@@ -91,6 +94,7 @@ $primary-color: $white;
 $secondary-color: $black;
 $accent-color: $gray;
 $shadow-color: rgba($black, .2);
+$border-color: $gray;
 $color-text: $black;
 $color-link: $blue;
 

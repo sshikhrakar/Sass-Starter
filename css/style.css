@@ -1645,12 +1645,12 @@ html, body {
 body {
   -webkit-font-smoothing: antialiased;
   color: #000;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-rendering: optimizeLegibility; }
 
 a {
   outline: none;
-  color: blue;
+  color: #3A539B;
   text-decoration: none;
   transition: color .2s; }
 
@@ -1658,8 +1658,7 @@ ul, ol {
   list-style: none; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: normal;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0; }
 
 h1 {
@@ -1678,10 +1677,21 @@ img {
 .example-doc .tree li:before, .example-doc .tree li:after {
   content: "";
   position: absolute;
-  background: #d4d4d4;
+  background: #e4e4e4;
   left: -20px; }
 
+header {
+  padding: 15px 0 25px;
+  border-bottom: 1px solid #e4e4e4; }
+
+p {
+  margin-bottom: 10px; }
+
 .example-doc .tree {
+  background: #2f3233;
+  padding: 20px;
+  color: #fff;
+  border-radius: 6px;
   list-style: none;
   position: relative; }
   .example-doc .tree ul {
@@ -1700,68 +1710,94 @@ img {
   .example-doc .tree > li:before, .example-doc .tree > li:after {
     background: none; }
 .example-doc pre {
-  background: #000;
-  border: 1px solid #d4d4d4;
+  background: #2f3233;
   padding: 10px;
   font-size: 14px;
   color: #fff;
   max-width: 800px;
-  border-radius: 2px;
+  border-radius: 6px;
   max-height: 200px;
-  overflow-y: auto; }
+  overflow-y: auto;
+  margin-bottom: 10px; }
 .example-doc .Block {
-  margin-top: 20px; }
+  padding: 20px 0;
+  border-bottom: 1px solid #e4e4e4; }
   @media (min-width: 768px) {
     .example-doc .Block {
-      margin-top: 30px; } }
+      padding: 30px 0; } }
   .example-doc .Block__segment {
+    padding: 20px 0;
+    border-bottom: 1px solid #e4e4e4; }
+    .example-doc .Block__segment:last-child {
+      border-bottom: none; }
+  .example-doc .Block h1 {
+    margin-bottom: 30px; }
+  .example-doc .Block h2 {
     margin-bottom: 20px; }
+  .example-doc .Block h3 {
+    margin-bottom: 10px; }
 .example-doc .Box {
   width: 20px;
   height: 20px;
-  background: red; }
+  background: #D24D57;
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+  margin-right: 10px;
+  float: left; }
   @media (min-width: 768px) {
     .example-doc .Box {
-      width: 40px;
-      height: 40px;
-      background: blue; } }
+      width: 50px;
+      height: 50px;
+      background: #3A539B; } }
   @media (min-width: 992px) {
     .example-doc .Box {
-      width: 60px;
-      height: 60px;
-      background: green; } }
+      width: 70px;
+      height: 70px;
+      background: #36D7B7; } }
   @media (min-width: 1200px) {
     .example-doc .Box {
-      width: 80px;
-      height: 80px;
-      background: yellow; } }
+      width: 100px;
+      height: 100px;
+      background: #F7CA18; } }
 .example-doc .btn {
-  padding: 10px;
+  padding: 10px 15px;
   border: 0;
-  color: #fff; }
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold; }
   .example-doc .btn--default {
-    background: blue; }
+    background: #3A539B; }
   .example-doc .btn--success {
-    background: #89e5b0; }
+    background: #36D7B7; }
   .example-doc .btn--error {
-    background: #fe748f; }
+    background: #d7616a; }
   .example-doc .btn--warning {
-    background: rgba(255, 226, 109, 0.3); }
+    background: #F7CA18; }
+.example-doc .dotted {
+  padding: 10px 0;
+  border-bottom: 1px dotted #e4e4e4; }
 .example-doc .gray--base, .example-doc .gray--dark, .example-doc .gray--light, .example-doc .blue--base, .example-doc .blue--dark, .example-doc .blue--light {
-  width: 50px;
-  height: 20px; }
+  padding: 6px;
+  color: #fff;
+  text-align: center; }
 .example-doc .gray--base {
-  background: #d4d4d4; }
+  background: #e4e4e4;
+  color: #000; }
 .example-doc .gray--dark {
-  background: #a1a1a1; }
+  background: #b1b1b1;
+  color: #000; }
 .example-doc .gray--light {
-  background: white; }
+  background: white;
+  color: #000; }
 .example-doc .blue--base {
-  background: blue; }
+  background: #3A539B; }
 .example-doc .blue--dark {
-  background: #000099; }
+  background: #1e2b51; }
 .example-doc .blue--light {
-  background: #6666ff; }
+  background: #7188ca; }
+
+footer {
+  padding: 15px 0; }
 
 @media (min-width: 768px) {
   .is-collapsed-mobile {
@@ -1788,7 +1824,7 @@ img {
     text-shadow: none !important; }
 
   body {
-    font: 12pt "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font: 12pt "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height: 1.3; }
 
   a,
