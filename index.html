@@ -291,7 +291,7 @@ blocks and html elements.</p>
 <p>CSS Output:</p>
 <pre>.box{
   width: 39.0625%;
-}</pre>  
+}</pre>
             </div>
           </div>
         </div>
@@ -299,15 +299,115 @@ blocks and html elements.</p>
         <div class="Block">
           <div class="container">
             <h3>Using Maps:</h3>
+            <p>Define maps at _config.scss partial.</p>
+
+
+
+
+
             <div class="Block__segment">
-              <p>Mapping background colors to buttons:</p>
+              <p>Mapping background colors to elements:</p>
+<p>SCSS:</p>
+<pre>// Declare map for UI colors
+$ui-colors: (
+  default: $blue,
+  success: $success,
+  error: $error,
+  warning: $edit
+);
+
+//Using a mixin to iterate through the map:
+@mixin bg-colors($map){
+  @each $theme, $color in $map{
+    &--#{$theme}{ //Interpolating parent class name with map key
+      background: $color;
+    }
+  }
+}
+
+//Using the mixin to create different types of button with different background colors:
+.btn{
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  @include bg-colors($ui-colors);
+}
+</pre>
+<p>CSS Output:</p>
+<pre>.btn{
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn--default{
+  background: blue;
+}
+
+.btn--success{
+  background: green;
+}
+
+.btn--error{
+  background: red;
+}
+
+.btn--warning{
+  background: yellow;
+}</pre>
+<p>Example:</p>
               <button class="btn btn--default">Default</button>
               <button class="btn btn--success">Success</button>
               <button class="btn btn--error">Error</button>
               <button class="btn btn--warning">Warning</button>
             </div>
             <div class="Block__segment">
-              <p>Color Palette generation using nested maps:</p>
+              <p>Using nested maps:</p>
+              <p>SCSS:</p>
+<pre>// Nested Map:
+$palettes: (
+	gray-shades: (
+	  base: $gray,
+	  dark: darken($gray,20%),
+	  light: lighten($gray,20%)
+	),
+	blue-shades: (
+		base: $blue,
+	  dark: darken($blue,20%),
+	  light: lighten($blue,20%)
+	)
+);
+
+// Use palette function
+// $palette   - Map required under $palettes map($palettes map is defined under _config.scss partial)
+// $shade     - Key of provide $palette map
+// base       - Default key of $shade under $palette map
+// @returns   - map
+@function palette($palette, $shade: base){
+	@return map-get(map-get($palettes, $palette), $shade);
+}
+
+//Using function in SCSS code:
+.blue{
+  @include m(base){
+    @extend %palette-props;
+    background: palette(blue-shades);
+  }
+  @include m(dark){
+    @extend %palette-props;
+    background: palette(blue-shades, dark);
+  }
+  @include m(light){
+    @extend %palette-props;
+    background: palette(blue-shades, light);
+  }
+}</pre>
+<p>Example of generated palette:</p>
               <div class="col-xs-12 col-sm-6">
                 <div class="gray--dark">Dark</div>
                 <div class="gray--base">Base</div>
