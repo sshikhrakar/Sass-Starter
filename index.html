@@ -82,9 +82,12 @@
                  The media query breakpoints are based on bootstrap breakpoints. Change the breakpoints according to your
                  needs at utilities/_config.scss
               </p>
-              <p>HTML:</p>
-              <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
-              <p>SCSS:</p>
+              <p>
+                <span>HTML:</span>
+                <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
+              </p>
+<p>
+<span>SCSS:</span>
 <pre>.Box{
   // For mobile devices of size less than 768px put code here
   width: 20px;
@@ -109,7 +112,10 @@
     background: yellow;
   }
 }</pre>
-  <p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>.Box{
   width: 20px;
   height: 20px;
@@ -136,14 +142,19 @@
     background: yellow;
   }
 }</pre>
-  <p>Example:</p>
-  <p>Resize browser window to see effect.</p>
+</p>
+
+<p>
+  <span>Example:</span>
+  <span>Resize browser window to see effect.</span>
   <div>
     <div class="Box"></div>
     <div class="Box"></div>
     <div class="Box"></div>
     <div class="Box"></div>
   </div>
+</p>
+
 </div>
 
 
@@ -156,15 +167,22 @@
 Top-level abstraction of a new component. Is top in the heirarchy for this naming convention. Blocks can
 be nested with other blocks but they are independent to each other with no precedence it hierrarchy.
 </p>
-<p>HTML:</p>
-<pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
-<p>SCSS:</p>
 <p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
 blocks and html elements.</p>
+
+<p>
+<span>HTML:</span>
+<pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
+</p>
+
+<p>
+<span>SCSS:</span>
 <pre>// Here ".nav" class selector is a Block
 .Nav {
   padding: 10px 0;
 }</pre>
+</p>
+
 </div>
 
 <div class="dotted">
@@ -176,20 +194,22 @@ blocks and html elements.</p>
     Example: .block__elem
     Element naming can also have a single dash. Example: .Patient__info-detail
   </p>
-
-  <p>HTML:</p>
+  <p>
+    Use class name selector only, ids and tags name should not be used. Should be independent from all other
+    blocks and html elements.
+  </p>
+<p>
+<span>HTML:</span>
 <pre>&lt;ul class="Nav"&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
 &lt;/ul>
 </pre>
-<p>SCSS:</p>
-<p>
-  Use class name selector only, ids and tags name should not be used. Should be independent from all other
-  blocks and html elements.
-
 </p>
+
+<p>
+<span>SCSS:</span>
 <pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
   padding: 10px 0;
@@ -198,7 +218,10 @@ blocks and html elements.</p>
     margin-right: 10px;
   }
 }</pre>
-<p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>//Output is completely independent from the parent block class selectors
 .Nav {
   padding: 10px 0;
@@ -208,6 +231,8 @@ blocks and html elements.</p>
   float: left;
   margin-right: 10px;
 }</pre>
+</p>
+
 </div>
 
 <div class="dotted">
@@ -218,17 +243,22 @@ blocks and html elements.</p>
   Example: .block--mod or .block__elem--mod
   Modifier naming can also have a single dash. Example: .Box__row--gray-bg
 </p>
-<p>HTML:</p>
+<p>
+  Use class name selector only, ids and tags name should not be used. Should be independent from all other
+  blocks and html elements.
+</p>
+
+<p>
+<span>HTML:</span>
 <pre>&lt;ul class="Nav"&gt;
   &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
 &lt;/ul></pre>
-<p>SCSS:</p>
-<p>
-  Use class name selector only, ids and tags name should not be used. Should be independent from all other
-  blocks and html elements.
 </p>
+
+<p>
+<span>SCSS:</span>
 <pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
   padding: 10px 0;
@@ -241,7 +271,10 @@ blocks and html elements.</p>
     }
   }
 }</pre>
-<p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>//Output is completely independent from the parent block and element class selectors
 .Nav {
   padding: 10px 0;
@@ -256,6 +289,8 @@ blocks and html elements.</p>
   color: blue;
   font-weight: bold;
 }</pre>
+</p>
+
 </div>
             </div>
           </div>
@@ -263,51 +298,66 @@ blocks and html elements.</p>
 
         <div class="Block">
           <div class="container">
-            <h3>Using Functions:</h3>
+            <h2>Using Functions:</h2>
             <p>Find the functions defined under utilities/_utilities.scss.</p>
             <div class="Block__segment">
               <h3>rem function</h3>
               <p>Convert pixel unit into rem</p>
-              <p>Usage(SCSS):</p>
+
+<p>
+<span>Usage(SCSS):</span>
 <pre>header{
   padding: rem(20px) rem(30px);
 }</pre>
-<p>Alternative(SCSS):</p>
+</p>
+
+<p>
+<span>Alternative(SCSS):</span>
 <pre>header{
   padding: rem(20) rem(30);
 }</pre>
-<p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>header{
   padding: 1.25rem 1.875rem; //base font size of 16px
 }</pre>
+</p>
+
 </div>
             <div class="Block__segment">
               <h3>pntg function</h3>
               <p>Convert pixel unit to percentage</p>
-              <p>Usage(SCSS):</p>
+
+<p>
+<span>Usage(SCSS):</span>
 <pre>.box{
   width: pntg(300,768); //First parameter is target width and second parameter is context width
 }</pre>
-<p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>.box{
   width: 39.0625%;
 }</pre>
+</p>
+
             </div>
           </div>
         </div>
 
         <div class="Block">
           <div class="container">
-            <h3>Using Maps:</h3>
+            <h2>Using Maps:</h2>
             <p>Define maps at _config.scss partial.</p>
 
-
-
-
-
             <div class="Block__segment">
-              <p>Mapping background colors to elements:</p>
-<p>SCSS:</p>
+              <h3>Mapping background colors to elements:</h3>
+
+<p>
+<span>SCSS:</span>
 <pre>// Declare map for UI colors
 $ui-colors: (
   default: $blue,
@@ -336,7 +386,10 @@ $ui-colors: (
   @include bg-colors($ui-colors);
 }
 </pre>
-<p>CSS Output:</p>
+</p>
+
+<p>
+<span>CSS Output:</span>
 <pre>.btn{
   padding: 10px 15px;
   border: 0;
@@ -360,15 +413,24 @@ $ui-colors: (
 .btn--warning{
   background: yellow;
 }</pre>
-<p>Example:</p>
-              <button class="btn btn--default">Default</button>
-              <button class="btn btn--success">Success</button>
-              <button class="btn btn--error">Error</button>
-              <button class="btn btn--warning">Warning</button>
+</p>
+
+<p>
+  <span>Example:</span>
+  <div>
+    <button class="btn btn--default">Default</button>
+    <button class="btn btn--success">Success</button>
+    <button class="btn btn--error">Error</button>
+    <button class="btn btn--warning">Warning</button>
+  </div>
+</p>
+
             </div>
             <div class="Block__segment">
-              <p>Using nested maps:</p>
-              <p>SCSS:</p>
+              <h3>Using nested maps:</h3>
+
+<p>
+<span>SCSS:</span>
 <pre>// Nested Map:
 $palettes: (
 	gray-shades: (
@@ -407,18 +469,23 @@ $palettes: (
     background: palette(blue-shades, light);
   }
 }</pre>
-<p>Example of generated palette:</p>
-              <div class="col-xs-12 col-sm-6">
-                <div class="gray--dark">Dark</div>
-                <div class="gray--base">Base</div>
-                <div class="gray--light">Light</div>
-              </div>
+</p>
 
-              <div class="col-xs-12 col-sm-6">
-                <div class="blue--dark">Dark</div>
-                <div class="blue--base">Base</div>
-                <div class="blue--light">Light</div>
-              </div>
+<p>
+  <span>Example of generated palette:</span>
+  <div class="Palette__wrap">
+    <div class="gray--dark">Dark</div>
+    <div class="gray--base">Base</div>
+    <div class="gray--light">Light</div>
+  </div>
+
+  <div class="Palette__wrap">
+    <div class="blue--dark">Dark</div>
+    <div class="blue--base">Base</div>
+    <div class="blue--light">Light</div>
+  </div>
+</p>
+
             </div>
           </div>
         </div>
