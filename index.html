@@ -82,11 +82,11 @@
                  The media query breakpoints are based on bootstrap breakpoints. Change the breakpoints according to your
                  needs at utilities/_config.scss
               </p>
-              <p>
+              <div class="Block__code">
                 <span>HTML:</span>
                 <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
-              </p>
-<p>
+              </div>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>.Box{
   // For mobile devices of size less than 768px put code here
@@ -112,9 +112,9 @@
     background: yellow;
   }
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>.Box{
   width: 20px;
@@ -142,9 +142,9 @@
     background: yellow;
   }
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
   <span>Example:</span>
   <span>Resize browser window to see effect.</span>
   <div>
@@ -153,7 +153,7 @@
     <div class="Box"></div>
     <div class="Box"></div>
   </div>
-</p>
+</div>
 
 </div>
 
@@ -170,18 +170,18 @@ be nested with other blocks but they are independent to each other with no prece
 <p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
 blocks and html elements.</p>
 
-<p>
+<div class="Block__code">
 <span>HTML:</span>
 <pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>// Here ".nav" class selector is a Block
 .Nav {
   padding: 10px 0;
 }</pre>
-</p>
+</div>
 
 </div>
 
@@ -198,7 +198,7 @@ blocks and html elements.</p>
     Use class name selector only, ids and tags name should not be used. Should be independent from all other
     blocks and html elements.
   </p>
-<p>
+<div class="Block__code">
 <span>HTML:</span>
 <pre>&lt;ul class="Nav"&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
@@ -206,9 +206,9 @@ blocks and html elements.</p>
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
 &lt;/ul>
 </pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
@@ -218,9 +218,9 @@ blocks and html elements.</p>
     margin-right: 10px;
   }
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>//Output is completely independent from the parent block class selectors
 .Nav {
@@ -231,7 +231,7 @@ blocks and html elements.</p>
   float: left;
   margin-right: 10px;
 }</pre>
-</p>
+</div>
 
 </div>
 
@@ -248,16 +248,16 @@ blocks and html elements.</p>
   blocks and html elements.
 </p>
 
-<p>
+<div class="Block__code">
 <span>HTML:</span>
 <pre>&lt;ul class="Nav"&gt;
   &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
 &lt;/ul></pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
@@ -271,9 +271,9 @@ blocks and html elements.</p>
     }
   }
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>//Output is completely independent from the parent block and element class selectors
 .Nav {
@@ -289,7 +289,7 @@ blocks and html elements.</p>
   color: blue;
   font-weight: bold;
 }</pre>
-</p>
+</div>
 
 </div>
             </div>
@@ -304,45 +304,45 @@ blocks and html elements.</p>
               <h3>rem function</h3>
               <p>Convert pixel unit into rem</p>
 
-<p>
+<div class="Block__code">
 <span>Usage(SCSS):</span>
 <pre>header{
   padding: rem(20px) rem(30px);
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>Alternative(SCSS):</span>
 <pre>header{
   padding: rem(20) rem(30);
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>header{
   padding: 1.25rem 1.875rem; //base font size of 16px
 }</pre>
-</p>
+</div>
 
 </div>
             <div class="Block__segment">
               <h3>pntg function</h3>
               <p>Convert pixel unit to percentage</p>
 
-<p>
+<div class="Block__code">
 <span>Usage(SCSS):</span>
 <pre>.box{
   width: pntg(300,768); //First parameter is target width and second parameter is context width
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>.box{
   width: 39.0625%;
 }</pre>
-</p>
+</div>
 
             </div>
           </div>
@@ -356,7 +356,7 @@ blocks and html elements.</p>
             <div class="Block__segment">
               <h3>Mapping background colors to elements:</h3>
 
-<p>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>// Declare map for UI colors
 $ui-colors: (
@@ -386,9 +386,9 @@ $ui-colors: (
   @include bg-colors($ui-colors);
 }
 </pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
 <span>CSS Output:</span>
 <pre>.btn{
   padding: 10px 15px;
@@ -413,9 +413,9 @@ $ui-colors: (
 .btn--warning{
   background: yellow;
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
   <span>Example:</span>
   <div>
     <button class="btn btn--default">Default</button>
@@ -423,13 +423,13 @@ $ui-colors: (
     <button class="btn btn--error">Error</button>
     <button class="btn btn--warning">Warning</button>
   </div>
-</p>
+</div>
 
             </div>
             <div class="Block__segment">
               <h3>Using nested maps:</h3>
 
-<p>
+<div class="Block__code">
 <span>SCSS:</span>
 <pre>// Nested Map:
 $palettes: (
@@ -469,9 +469,9 @@ $palettes: (
     background: palette(blue-shades, light);
   }
 }</pre>
-</p>
+</div>
 
-<p>
+<div class="Block__code">
   <span>Example of generated palette:</span>
   <div class="Palette__wrap">
     <div class="gray--dark">Dark</div>
@@ -484,7 +484,7 @@ $palettes: (
     <div class="blue--base">Base</div>
     <div class="blue--light">Light</div>
   </div>
-</p>
+</div>
 
             </div>
           </div>
@@ -493,7 +493,12 @@ $palettes: (
     </main>
     <footer>
       <div class="container">
-        <a href="https://github.com/sshikhrakar/Sass-Starter">Github</a>
+        <div class="pull-left">
+          <a href="https://github.com/sshikhrakar/Sass-Starter">Github</a>
+        </div>
+        <div class="pull-right">
+          <span>By Shirish Shikhrakar&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Sass Starter</span>
+        </div>
       </div>
     </footer>
   </div>
