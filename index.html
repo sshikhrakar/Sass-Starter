@@ -263,6 +263,41 @@ blocks and html elements.</p>
 
         <div class="Block">
           <div class="container">
+            <h3>Using Functions:</h3>
+            <p>Find the functions defined under utilities/_utilities.scss.</p>
+            <div class="Block__segment">
+              <h3>rem function</h3>
+              <p>Convert pixel unit into rem</p>
+              <p>Usage(SCSS):</p>
+<pre>header{
+  padding: rem(20px) rem(30px);
+}</pre>
+<p>Alternative(SCSS):</p>
+<pre>header{
+  padding: rem(20) rem(30);
+}</pre>
+<p>CSS Output:</p>
+<pre>header{
+  padding: 1.25rem 1.875rem; //base font size of 16px
+}</pre>
+</div>
+            <div class="Block__segment">
+              <h3>pntg function</h3>
+              <p>Convert pixel unit to percentage</p>
+              <p>Usage(SCSS):</p>
+<pre>.box{
+  width: pntg(300,768); //First parameter is target width and second parameter is context width
+}</pre>
+<p>CSS Output:</p>
+<pre>.box{
+  width: 39.0625%;
+}</pre>  
+            </div>
+          </div>
+        </div>
+
+        <div class="Block">
+          <div class="container">
             <h3>Using Maps:</h3>
             <div class="Block__segment">
               <p>Mapping background colors to buttons:</p>
