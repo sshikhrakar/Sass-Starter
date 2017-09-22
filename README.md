@@ -17,16 +17,18 @@ SMACSS (pronounced “smacks”) is more style guide than rigid framework. This 
 
 ## Getting Started
 
-If not installed, please install ```node``` and ```npm```.
-If not installed, please install gulp by doing ```npm install -g gulp```.
-If not installed, please install ```ruby```.
-Install ```gulp-ruby-sass``` by doinf ```npm install -g gulp-ruby-sass``` for global or ```npm install --save-dev gulp-ruby-sass``` for local.
+#### Initial Checks:
+* If not installed, please install ```node``` and ```npm```.
+* If not installed, please install gulp by doing ```npm install -g gulp```.
+* If not installed, please install ```ruby```.
+* Install ```gulp-ruby-sass``` by doinf ```npm install -g gulp-ruby-sass``` for global or ```npm install --save-dev gulp-ruby-sass``` for local.
 
+#### Installation:
 1. Clone Sass Starter repo with ```git clone git@github.com:sshikhrakar/Sass-Starter.git``` (Using SSH) or download the zip.
 2. Go to your project folder using a terminal, and do ```npm install```.
 3. After npm package install, do ```gulp``` to start the server. Your default browser will open automatically and the server will be hosted at ```http://localhost:3000```.
 
-For building your minified css code and optimized images do ```gulp build```. All files will be created at ```dist\``` folder.
+> For building your minified css code and optimized images do ```gulp build```. All files will be created at ```dist\``` folder.
 
 > Include or remove bootstrap at ```utilities/_manifest.scss```.
 
