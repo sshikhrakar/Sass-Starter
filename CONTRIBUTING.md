@@ -14,9 +14,9 @@ Responsibilities:
 
 # Your First Contribution?
 
-Unsure where to begin contributing to Sass Starter? You can start by looking through the issues.
+Unsure where to begin contributing to Sass Starter? You can start by looking through the [issues](https://github.com/sshikhrakar/Sass-Starter/issues).
 
-Here are a couple of useful links: [pull request](http://makeapullrequest.com/) and [first timer](http://www.firsttimersonly.com/)
+Here are a couple of useful links: [Make a pull request](http://makeapullrequest.com/) and [First timer only](http://www.firsttimersonly.com/)
 
 Working on your first Pull Request? You can learn how from this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
@@ -27,7 +27,6 @@ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code 
 # Getting started
 
 For something that is bigger than a one or two line fix:
-
 1. Create your own fork of the code
 2. Do the changes in your fork
 3. If you like the change and think the project could use it:
@@ -36,7 +35,6 @@ For something that is bigger than a one or two line fix:
     * Send a pull request.
 
 Small contributions such as fixing spelling errors can be submitted by a contributor as a patch.
-
 As a rule of thumb, small changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
 * Spelling / grammar fixes
 * Typo correction, white space and formatting changes
@@ -48,12 +46,13 @@ As a rule of thumb, small changes are obvious fixes if they do not introduce any
 
 # How to report a bug
 
-When filing an issue, make sure to answer these five questions:
+File a bug by opening an [issue](https://github.com/sshikhrakar/Sass-Starter/issues/new).
 
+When filing an issue, make sure to answer these five questions:
 1. What version of SASS are you using?
 2. What operating system and browser are you using?
 3. What did you do?
 4. What did you expect to see?
 5. What did you see instead?
 
-> Open an issue on GitHub which describes the feature you would like to see, why you need it, and how it should work.
+> [Open an issue](https://github.com/sshikhrakar/Sass-Starter/issues/new) on GitHub which describes the feature you would like to see, why you need it, and how it should work.
