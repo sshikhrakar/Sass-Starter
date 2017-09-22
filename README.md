@@ -28,7 +28,7 @@ Install ```gulp-ruby-sass``` by doinf ```npm install -g gulp-ruby-sass``` for gl
 
 For building your minified css code and optimized images do ```gulp build```. All files will be created at ```dist\``` folder.
 
-> Include or remove bootstrap at ```utilities\_manifest.scss```.
+> Include or remove bootstrap at ```utilities/_manifest.scss```.
 
 ### Prerequisites
 ```
