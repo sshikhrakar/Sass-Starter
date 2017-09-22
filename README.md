@@ -5,7 +5,7 @@ SASS Starter - SCSS for SMACSS
 Starter code for SASS based on [Scalar and Modular Architecture for CSS (SMACSS)](https://smacss.com/).
 SMACSS (pronounced “smacks”) is more style guide than rigid framework. This allows for more customization to the structure as we see fit. Sass Starter is an open source project.
 
-## Features:
+## Features
 
 * SMACSS structure for SASS.
 * Mixins for BEM naming conventions and Media queries.
@@ -16,15 +16,11 @@ SMACSS (pronounced “smacks”) is more style guide than rigid framework. This 
 * Packages such as JS/CSS minification and CSS autoprefixer included.
 
 ## Getting Started
-```
+
 If not installed, please install ```node``` and ```npm```.
-
 If not installed, please install gulp by doing ```npm install -g gulp```.
-
 If not installed, please install ```ruby```.
-
 Install ```gulp-ruby-sass``` by doinf ```npm install -g gulp-ruby-sass``` for global or ```npm install --save-dev gulp-ruby-sass``` for local.
-```
 
 1. Clone Sass Starter repo with ```git clone git@github.com:sshikhrakar/Sass-Starter.git``` (Using SSH) or download the zip.
 2. Go to your project folder using a terminal, and do ```npm install```.
