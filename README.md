@@ -5,6 +5,8 @@ SASS Starter - SCSS for SMACSS
 Starter code for SASS based on [Scalar and Modular Architecture for CSS (SMACSS)](https://smacss.com/).
 SMACSS (pronounced “smacks”) is more style guide than rigid framework. This allows for more customization to the structure as we see fit. Sass Starter is an open source project.
 
+Visit this [link](https://sshikhrakar.github.io/Sass-Starter/) for documentation.
+
 ## Features
 
 * SMACSS structure for SASS.
