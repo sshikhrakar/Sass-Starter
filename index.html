@@ -16,7 +16,9 @@
       <div class="container">
         <h1>Sass Starter</h1>
         <p class="sub-header">SCSS for SMACSS</p>
-        <p>Starter code for SASS based on Scalar and Modular Architecture for CSS (SMACSS). SMACSS (pronounced “smacks”) is more style guide than rigid framework. So, you can customize the structure as you like.</p>
+        <p>Starter code for SASS based on Scalar and Modular Architecture for CSS (SMACSS).
+          SMACSS (pronounced “smacks”) is more style guide than rigid framework. This allows for more customization to the structure as we see fit.
+        </p>
       </div>
     </header>
     <main>
@@ -77,10 +79,13 @@
             <h2>Using Mixins:</h2>
             <div class="Block__segment">
               <h3>Using Media query Mixins:</h3>
-              <p>Find the mixin for media query under utilities/_utilities.scss.
-                 Responsive web design is based on Mobile first.
-                 The media query breakpoints are based on bootstrap breakpoints. Change the breakpoints according to your
-                 needs at utilities/_config.scss
+              <p>Find the mixin for media query under
+                 <span class="highlight">utilities/_utilities.scss</span>.
+                 Responsive web design for Sass Starter is based on Mobile first design
+                 and media query breakpoints are based on bootstrap breakpoints.
+                 Breakpoints variables can be customized according to your
+                 needs at
+                 <span class="highlight">utilities/_config.scss</span>.
               </p>
               <div class="Block__code">
                 <span>HTML:</span>
@@ -120,6 +125,9 @@
   width: 20px;
   height: 20px;
   background: red;
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+  margin-right: 10px;
+  float: left;
 }
 @media(min-width: 768px){
   .Box{
@@ -160,15 +168,18 @@
 
 <div class="Block__segment">
   <h3>Using BEM Mixins:</h3>
-  <p>Find the mixin for BEM under utilities/_utilities.scss.</p>
+  <p>Find the mixin for BEM under
+     <span class="highlight">utilities/_utilities.scss</span>.
+   </p>
 <div class="dotted">
 <h3>Block</h3>
 <p>
-Top-level abstraction of a new component. Is top in the heirarchy for this naming convention. Blocks can
-be nested with other blocks but they are independent to each other with no precedence it hierrarchy.
+Block is a top-level abstraction of a new component. It is top in the hierarchy for this naming convention.
+Blocks can be nested with other blocks but they are independent to each other with no precedence in hierarchy.
 </p>
-<p>Use class name selector only, ids and tags name should not be used. Should be independent from all other
-blocks and html elements.</p>
+<p>We should use class name selector only; ids and tags name should not be used. CSS code should be
+  independent from all other
+  blocks and html elements.</p>
 
 <div class="Block__code">
 <span>HTML:</span>
@@ -188,14 +199,19 @@ blocks and html elements.</p>
 <div class="dotted">
   <h3>Element</h3>
   <p>
-    Child elements inside of Block element. Gives specific meaning to child elements. Elements have their
+    Element is child elements inside of Block element and gives specific meaning to its elements.
+    Elements have their
     meaning always derived from its respective parent block.
-    CSS class is formed as block name plus two underscores plus element name.
-    Example: .block__elem
-    Element naming can also have a single dash. Example: .Patient__info-detail
   </p>
   <p>
-    Use class name selector only, ids and tags name should not be used. Should be independent from all other
+    CSS class is formed as block name plus two underscores plus element name.
+    Example:
+    <span class="highlight">.block__elem</span>
+    Element naming can also have a single dash.
+    Example: <span class="highlight">.Patient__info-detail</span>
+  </p>
+  <p>
+    We should use class name selector only, ids and tags name should not be used. CSS code should be independent from all other
     blocks and html elements.
   </p>
 <div class="Block__code">
@@ -222,7 +238,8 @@ blocks and html elements.</p>
 
 <div class="Block__code">
 <span>CSS Output:</span>
-<pre>//Output is completely independent from the parent block class selectors
+<p>Output is completely independent from the parent block class selectors.</p>
+<pre>
 .Nav {
   padding: 10px 0;
 }
@@ -239,12 +256,13 @@ blocks and html elements.</p>
 <h3>Modifier</h3>
 <p>
   Modifier is used to modify blocks or elements.
-  CSS class is will be formed by added two dashes to block’s or element’s class name.
-  Example: .block--mod or .block__elem--mod
-  Modifier naming can also have a single dash. Example: .Box__row--gray-bg
+  CSS class will be formed by added two dashes to block’s or element’s class name.
+  Example: <span class="highlight">.block--mod</span> or <span class="highlight">.block__elem--mod</span>
+  Modifier naming can also have a single dash. Example: <span class="highlight">.Box__row--gray-bg</span>
 </p>
 <p>
-  Use class name selector only, ids and tags name should not be used. Should be independent from all other
+  We should use class name selector only, ids and tags name should not be used. CSS code
+  should be independent from all other
   blocks and html elements.
 </p>
 
@@ -275,7 +293,8 @@ blocks and html elements.</p>
 
 <div class="Block__code">
 <span>CSS Output:</span>
-<pre>//Output is completely independent from the parent block and element class selectors
+<p>Output is completely independent from the parent block and element class selectors.</p>
+<pre>
 .Nav {
   padding: 10px 0;
 }

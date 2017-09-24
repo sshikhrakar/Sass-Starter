@@ -238,25 +238,31 @@ $pink: #df2771;
       background: palette(blue-shades, light);
     }
   }
-}
-.Palette{
-  @include e(wrap){
-    margin-bottom: 20px;
-    @include mq(sm){
-      width: 300px;
-      float: left;
-      margin-right: 20px;
+  .Palette{
+    @include e(wrap){
+      margin-bottom: 20px;
+      @include mq(sm){
+        width: 300px;
+        float: left;
+        margin-right: 20px;
+      }
     }
   }
-}
-footer{
-  padding: 15px 0;
-  background: $pink;
-  color: $white;
-  font-size: 14px;
-  font-weight: bold;
-  a{
+  footer{
+    padding: 15px 0;
+    background: $pink;
     color: $white;
+    font-size: 14px;
     font-weight: bold;
+    a{
+      color: $white;
+      font-weight: bold;
+    }
+  }
+  .highlight {
+    display: inline-block;
+    background: #dadada;
+    padding: 0 5px;
+    border-radius: 4px;
   }
 }
