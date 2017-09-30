@@ -318,10 +318,10 @@ Blocks can be nested with other blocks but they are independent to each other wi
         <div class="Block">
           <div class="container">
             <h2>Using Functions:</h2>
-            <p>Find the functions defined under utilities/_utilities.scss.</p>
+            <p>Find the functions defined under <span class="highlight">utilities/_utilities.scss</span>.</p>
             <div class="Block__segment">
               <h3>rem function</h3>
-              <p>Convert pixel unit into rem</p>
+              <p>Convert pixel unit into rem.</p>
 
 <div class="Block__code">
 <span>Usage(SCSS):</span>
@@ -347,7 +347,7 @@ Blocks can be nested with other blocks but they are independent to each other wi
 </div>
             <div class="Block__segment">
               <h3>pntg function</h3>
-              <p>Convert pixel unit to percentage</p>
+              <p>Convert pixel unit to percentage.</p>
 
 <div class="Block__code">
 <span>Usage(SCSS):</span>
@@ -370,11 +370,19 @@ Blocks can be nested with other blocks but they are independent to each other wi
         <div class="Block">
           <div class="container">
             <h2>Using Maps:</h2>
-            <p>Define maps at _config.scss partial.</p>
+            <p>Define maps at <span class="highlight">_config.scss partial</span>.</p>
 
             <div class="Block__segment">
               <h3>Mapping background colors to elements:</h3>
-
+<div class="Block__code">
+<span>HTML:</span>
+<pre>&lt;div&gt;
+  &lt;button class="btn btn--default"&gt;Default&lt;/button&gt;
+  &lt;button class="btn btn--success"&gt;Succes&lt;/button&gt;
+  &lt;button class="btn btn--error"&gt;Error&lt;/button&gt;
+  &lt;button class="btn btn--warning"&gt;Warning&lt;/button&gt;
+&lt;/div&gt;</pre>
+</div>
 <div class="Block__code">
 <span>SCSS:</span>
 <pre>// Declare map for UI colors
