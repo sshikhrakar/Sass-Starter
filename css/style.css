@@ -1855,24 +1855,27 @@ img {
   background: #1e2b51; }
 .example-doc .blue--light {
   background: #7188ca; }
-
-.Palette__wrap {
+.example-doc .Palette__wrap {
   margin-bottom: 20px; }
   @media (min-width: 768px) {
-    .Palette__wrap {
+    .example-doc .Palette__wrap {
       width: 300px;
       float: left;
       margin-right: 20px; } }
-
-footer {
+.example-doc footer {
   padding: 15px 0;
   background: #df2771;
   color: #fff;
   font-size: 14px;
   font-weight: bold; }
-  footer a {
+  .example-doc footer a {
     color: #fff;
     font-weight: bold; }
+.example-doc .highlight {
+  display: inline-block;
+  background: #dadada;
+  padding: 0 5px;
+  border-radius: 4px; }
 
 @media (min-width: 768px) {
   .is-collapsed-mobile {
