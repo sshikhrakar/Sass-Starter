@@ -20,10 +20,11 @@ Visit this [link](https://sshikhrakar.github.io/Sass-Starter/) for documentation
 ## Getting Started
 
 #### Initial Checks:
-* If not installed, please install ```node``` and ```npm```.
-* If not installed, please install gulp by doing ```npm install -g gulp```.
-* If not installed, please install ```ruby```.
-* Install ```gulp-ruby-sass``` by doinf ```npm install -g gulp-ruby-sass``` for global or ```npm install --save-dev gulp-ruby-sass``` for local.
+
+* Install `node` and `npm`, if not installed.
+* Install gulp through `npm install -g gulp`, if not installed.
+* Install `ruby`, if not installed.
+* Install ```gulp-ruby-sass``` through `npm install -g gulp-ruby-sass` for global or `npm install --save-dev gulp-ruby-sass` for local installation.
 
 #### Installation:
 1. Clone Sass Starter repo with ```git clone git@github.com:sshikhrakar/Sass-Starter.git``` (Using SSH) or download the zip.
