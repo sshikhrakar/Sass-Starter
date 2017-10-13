@@ -5,15 +5,16 @@
   "main": "gulpfile.js",
   "scripts": {
     "html": "cpx *.html dist/",
-    "html:watch": "cpx *.html dist/ --watch",
+    "watch:html": "cpx *.html dist/ --watch",
     "fonts": "cpx fonts/**/* dist/fonts",
     "clean": "rimraf dist/",
     "clean:dist": "rimraf dist/**/* !dist/images/ ! dist/images/**/*",
     "sass": "node-sass --source-map true sass/style.scss -o css/",
-    "sass:watch": "node-sass --source-map true sass/style.scss -wo css/",
+    "watch:sass": "node-sass --source-map true sass/style.scss -wo css/",
     "imagemin": "imagemin images/**/* --out-dir=dist/images/",
-    "start": "run-s sass:watch html:watch",
-    "build": "run-s clean:dist sass imagemin fonts html"
+    "start": "concurrently \"npm run watch:html\" \"npm run watch:sass\" \"npm run serve\"",
+    "build": "npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run html",
+    "serve": "live-server --port=8080"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
+    "concurrently": "^3.5.0",
     "connect-history-api-fallback": "^1.3.0",
     "cpx": "^1.5.0",
     "del": "^2.2.2",
@@ -44,8 +46,8 @@
     "gulp-useref": "^3.1.2",
     "gulp-watch": "^4.3.11",
     "imagemin-cli": "^3.0.0",
+    "live-server": "^1.2.0",
     "node-sass": "^4.5.3",
-    "npm-run-all": "^4.1.1",
     "rimraf": "^2.6.2",
     "run-sequence": "^1.2.2"
   }
