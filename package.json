@@ -5,12 +5,15 @@
   "main": "gulpfile.js",
   "scripts": {
     "html": "cpx *.html dist/",
+    "html:watch": "cpx *.html dist/ --watch",
     "fonts": "cpx fonts/**/* dist/fonts",
     "clean": "rimraf dist/",
     "clean:dist": "rimraf dist/**/* !dist/images/ ! dist/images/**/*",
     "sass": "node-sass --source-map true sass/style.scss -o css/",
     "sass:watch": "node-sass --source-map true sass/style.scss -wo css/",
-    "imagemin": "imagemin images/**/* --out-dir=dist/images/"
+    "imagemin": "imagemin images/**/* --out-dir=dist/images/",
+    "start": "run-s sass:watch html:watch",
+    "build": "run-s clean:dist sass imagemin fonts html"
   },
   "repository": {
     "type": "git",
@@ -42,6 +45,7 @@
     "gulp-watch": "^4.3.11",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
     "rimraf": "^2.6.2",
     "run-sequence": "^1.2.2"
   }
