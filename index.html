@@ -91,79 +91,78 @@
                 <span>HTML:</span>
                 <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
               </div>
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>.Box{
-  // For mobile devices of size less than 768px put code here
-  width: 20px;
-  height: 20px;
-  background: red;
-  transition: width 0.3s ease-out, height 0.3s ease-out;
-  margin-right: 10px;
-  float: left;
-  @include mq(sm){// For devices of size greater than 768px(tablets) put code here
-    width: 50px;
-    height: 50px;
-    background: blue;
-  }
-  @include mq(md){// For devices of size greater than 992px(laptops) put code here
-    width: 70px;
-    height: 70px;
-    background: green;
-  }
-  @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
-    width: 100px;
-    height: 100px;
-    background: yellow;
-  }
-}</pre>
-</div>
+              <div class="Block__code">
+                <span>SCSS:</span>
+                <pre>.Box{
+                  // For mobile devices of size less than 768px put code here
+                  width: 20px;
+                  height: 20px;
+                  background: red;
+                  transition: width 0.3s ease-out, height 0.3s ease-out;
+                  margin-right: 10px;
+                  float: left;
+                  @include mq(sm){// For devices of size greater than 768px(tablets) put code here
+                    width: 50px;
+                    height: 50px;
+                    background: blue;
+                  }
+                  @include mq(md){// For devices of size greater than 992px(laptops) put code here
+                    width: 70px;
+                    height: 70px;
+                    background: green;
+                  }
+                  @include mq(lg){// For devices of size greater than 1200px(desktops and high-res TVs) put code here
+                    width: 100px;
+                    height: 100px;
+                    background: yellow;
+                  }
+                }</pre>
+              </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<pre>.Box{
-  width: 20px;
-  height: 20px;
-  background: red;
-  transition: width 0.3s ease-out, height 0.3s ease-out;
-  margin-right: 10px;
-  float: left;
-}
-@media(min-width: 768px){
-  .Box{
-    width: 50px;
-    height: 50px;
-    background: blue;
-  }
-}
-@media(min-width: 992px){
-  .Box{
-    width: 70px;
-    height: 70px;
-    background: green;
-  }
-}
-@media(min-width: 1200px){
-  .Box{
-    width: 100px;
-    height: 100px;
-    background: yellow;
-  }
-}</pre>
-</div>
+              <div class="Block__code">
+                <span>CSS Output:</span>
+                <pre>.Box{
+                  width: 20px;
+                  height: 20px;
+                  background: red;
+                  transition: width 0.3s ease-out, height 0.3s ease-out;
+                  margin-right: 10px;
+                  float: left;
+                }
+                @media(min-width: 768px){
+                  .Box{
+                    width: 50px;
+                    height: 50px;
+                    background: blue;
+                  }
+                }
+                @media(min-width: 992px){
+                  .Box{
+                    width: 70px;
+                    height: 70px;
+                    background: green;
+                  }
+                }
+                @media(min-width: 1200px){
+                  .Box{
+                    width: 100px;
+                    height: 100px;
+                    background: yellow;
+                  }
+                }</pre>
+              </div>
 
-<div class="Block__code">
-  <span>Example:</span>
-  <span>Resize browser window to see effect.</span>
-  <div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-  </div>
-</div>
-
-</div>
+              <div class="Block__code">
+                <span>Example:</span>
+                <span>Resize browser window to see effect.</span>
+                <div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                </div>
+              </div>
+            </div>
 
 
 <div class="Block__segment">
@@ -171,86 +170,85 @@
   <p>Find the mixin for BEM under
      <span class="highlight">utilities/_utilities.scss</span>.
    </p>
-<div class="dotted">
-<h3>Block</h3>
-<p>
-Block is a top-level abstraction of a new component. It is top in the hierarchy for this naming convention.
-Blocks can be nested with other blocks but they are independent to each other with no precedence in hierarchy.
-</p>
-<p>We should use class name selector only; ids and tags name should not be used. CSS code should be
-  independent from all other
-  blocks and html elements.</p>
+  <div class="dotted">
+    <h3>Block</h3>
+    <p>
+    Block is a top-level abstraction of a new component. It is top in the hierarchy for this naming convention.
+    Blocks can be nested with other blocks but they are independent to each other with no precedence in hierarchy.
+    </p>
+    <p>We should use class name selector only; ids and tags name should not be used. CSS code should be
+      independent from all other
+      blocks and html elements.</p>
 
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
-</div>
+    <div class="Block__code">
+      <span>HTML:</span>
+      <pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
+    </div>
 
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Here ".nav" class selector is a Block
-.Nav {
-  padding: 10px 0;
-}</pre>
-</div>
+    <div class="Block__code">
+      <span>SCSS:</span>
+      <pre>// Here ".nav" class selector is a Block
+      .Nav {
+        padding: 10px 0;
+      }</pre>
+    </div>
 
-</div>
+  </div>
 
-<div class="dotted">
-  <h3>Element</h3>
-  <p>
-    Element is child elements inside of Block element and gives specific meaning to its elements.
-    Elements have their
-    meaning always derived from its respective parent block.
-  </p>
-  <p>
-    CSS class is formed as block name plus two underscores plus element name.
-    Example:
-    <span class="highlight">.block__elem</span>
-    Element naming can also have a single dash.
-    Example: <span class="highlight">.Patient__info-detail</span>
-  </p>
-  <p>
-    We should use class name selector only, ids and tags name should not be used. CSS code should be independent from all other
-    blocks and html elements.
-  </p>
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;ul class="Nav"&gt;
-  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-  &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-&lt;/ul>
-</pre>
-</div>
+  <div class="dotted">
+    <h3>Element</h3>
+    <p>
+      Element is child elements inside of Block element and gives specific meaning to its elements.
+      Elements have their
+      meaning always derived from its respective parent block.
+    </p>
+    <p>
+      CSS class is formed as block name plus two underscores plus element name.
+      Example:
+      <span class="highlight">.block__elem</span>
+      Element naming can also have a single dash.
+      Example: <span class="highlight">.Patient__info-detail</span>
+    </p>
+    <p>
+      We should use class name selector only, id and tag names should not be used. CSS code should be independent from all other
+      blocks and html elements.
+    </p>
+    <div class="Block__code">
+      <span>HTML:</span>
+      <pre>&lt;ul class="Nav"&gt;
+        &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+        &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+        &lt;li class="nav__item"&gt;...&lt;/nav&gt;
+      &lt;/ul>
+      </pre>
+    </div>
 
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
-.Nav{
-  padding: 10px 0;
-  @include e(item){ //'e' is small for element
-    float: left;
-    margin-right: 10px;
-  }
-}</pre>
-</div>
+    <div class="Block__code">
+      <span>SCSS:</span>
+      <pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+      .Nav{
+        padding: 10px 0;
+        @include e(item){ //'e' is small for element
+          float: left;
+          margin-right: 10px;
+        }
+      }</pre>
+    </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<p>Output is completely independent from the parent block class selectors.</p>
-<pre>
-.Nav {
-  padding: 10px 0;
-}
+    <div class="Block__code">
+      <span>CSS Output:</span>
+      <p>Output is completely independent from the parent block class selectors.</p>
+      <pre>
+      .Nav {
+        padding: 10px 0;
+      }
 
-.Nav__item{
-  float: left;
-  margin-right: 10px;
-}</pre>
-</div>
-
-</div>
+      .Nav__item{
+        float: left;
+        margin-right: 10px;
+      }</pre>
+    </div>
+  </div>
 
 <div class="dotted">
 <h3>Modifier</h3>
@@ -261,7 +259,7 @@ Blocks can be nested with other blocks but they are independent to each other wi
   Modifier naming can also have a single dash. Example: <span class="highlight">.Box__row--gray-bg</span>
 </p>
 <p>
-  We should use class name selector only, ids and tags name should not be used. CSS code
+  We should use class name selector only, id and tag names should not be used. CSS code
   should be independent from all other
   blocks and html elements.
 </p>
