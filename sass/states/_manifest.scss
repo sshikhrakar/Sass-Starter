@@ -1,9 +1,0 @@
-// ==========================================================================
-// Manifest (States)
-// Each folder on the SMACSS architecture will have its own manifest partial. We import all the partials of
-// the folder to its respective manifest partial. Then all manifest partial will be imported to the
-// style.scss file.
-// ==========================================================================
-
-@import 'states';
-@import 'print';
