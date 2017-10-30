@@ -9,12 +9,13 @@
     "fonts": "cpx fonts/**/* dist/fonts",
     "clean": "rimraf dist/",
     "clean:dist": "rimraf dist/**/* !dist/images/ ! dist/images/**/*",
-    "sass": "node-sass --source-map true sass/style.scss -o css/",
-    "watch:sass": "node-sass --source-map true sass/style.scss -wo css/",
+    "sass": "node-sass --source-map true sass/style.scss -o dist/css/",
+    "watch:sass": "node-sass --source-map true sass/style.scss -wo dist/css/",
     "imagemin": "imagemin images/**/* --out-dir=dist/images/",
     "start": "concurrently \"npm run watch:html\" \"npm run watch:sass\" \"npm run serve\"",
     "build": "npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run html",
-    "serve": "live-server --port=8080"
+    "serve": "live-server --open=dist/ --port=8080",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -50,5 +51,8 @@
     "node-sass": "^4.5.3",
     "rimraf": "^2.6.2",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "gh-pages": "^1.0.0"
   }
 }
