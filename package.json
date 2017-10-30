@@ -13,7 +13,7 @@
     "watch:sass": "node-sass --source-map true sass/style.scss -wo dist/css/",
     "imagemin": "imagemin images/**/* --out-dir=dist/images/",
     "start": "concurrently \"npm run watch:html\" \"npm run watch:sass\" \"npm run serve\"",
-    "build": "npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run html",
+    "build": "npm install && npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run html",
     "serve": "live-server --open=dist/ --port=8080",
     "deploy": "npm run build && gh-pages -d dist"
   },
