@@ -1,7 +1,11 @@
+# Files
+.DS_Store
+Read Me.txt
+npm-debug.log
+
+# Directories
 node_modules/
 dist/
-.DS_Store
 bower_components/
-Read Me.txt
 .sass-cache/
 css/
