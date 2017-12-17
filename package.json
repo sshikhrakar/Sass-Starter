@@ -4,8 +4,8 @@
   "description": "Basic Sass outline with SMACSS architecture.",
   "main": "gulpfile.js",
   "scripts": {
-    "html": "cpx *.html dist/",
-    "watch:html": "cpx *.html dist/ --watch",
+    "html": "cpx \"*.html\" dist/",
+    "watch:html": "cpx \"*.html\" dist/ --watch",
     "fonts": "cpx fonts/**/* dist/fonts",
     "watch:fonts": "cpx fonts/**/* dist/fonts --watch",
     "js": "cpx js/**/* dist/js",
