@@ -1,0 +1,15 @@
+// ==========================================================================
+// Grid
+// Generates grid
+// ==========================================================================
+ 
+@include make-container;
+@include make-container-fixed-width;
+@include make-row;
+  
+@if ($type == 'flex' or $type == 'float'){ 
+  @include make-grid;
+} 
+@else{
+  @error "$Type should be 'flex' or 'float'";
+}
