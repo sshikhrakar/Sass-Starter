@@ -301,4 +301,28 @@
 	  	}
 	}
 }
+
+//theme-mixin
+@mixin make-theme($theme-name: 'default') {
+	body.#{$theme-name}{
+		h1 {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-heading-1-size");
+		}
+		h2 {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-heading-2-size");
+		}
+		h3 {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-heading-3-size");
+		}
+		.btn--primary {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-primary-btn-size");
+		}
+		.btn--secondary {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-secondary-btn-size");
+		}
+		p {
+			font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-paragraph-size");
+		}
+	}
+}
   
