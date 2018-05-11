@@ -12,10 +12,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	&:after{// Global Clearfixing
-		clear: both;
-		content: "";
-		display: block;
+	// Global Clearfixing
+	@if $grid-type == 'float'{
+		&:after{
+			clear: both;
+			content: "";
+			display: block;
+		}
 	}
 }
 

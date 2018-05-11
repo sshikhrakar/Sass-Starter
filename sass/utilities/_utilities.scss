@@ -122,18 +122,26 @@
 // $break  - RWD break point values, change them in _config.scss. Default: bootstrap grid
 // @usage  - `.Nav {@include mq(sm) {...}}`
 @mixin mq($break){
-	@if $break == "sm" {// tablet
+	@if $break == "xs" {//lowest breakpoint value
+		@content;
+	}
+	@else if $break == "sm" {// phone
 		@media(min-width: $sm-device){
 			@content;
 		}
 	}
-	@else if $break == "md" {// laptop and desktop
+	@else if $break == "md" {// tablet
 		@media(min-width: $md-device){
 			@content;
 		}
 	}
-	@else if $break == "lg" {// High res desktop and TVs
+	@else if $break == "lg" {// laptop and desktop
 		@media(min-width: $lg-device){
+			@content;
+		}
+	}
+	@else if $break == "xl" {// High res desktop and TVs
+		@media(min-width: $xl-device){
 			@content;
 		}
 	}
@@ -169,8 +177,8 @@
 
 // Pseudo element mixin
 // $el         - provide "before" or "after" string
-// $wl-width   - Width for the pseudo element in px
-// $wl-height  - Height for the pseudo element in px
+// $el-width   - Width for the pseudo element in px
+// $el-height  - Height for the pseudo element in px
 // @usage      - `.dropdown {@include psuedo-el('before') {...}}`
 @mixin psuedo-el($el, $el-width: null, $el-height: null){
 	@if $el == 'before' or $el == 'after'{
@@ -185,3 +193,5 @@
 		@warn "#{$el} is not a valid pseudo-element";
 	}
 }
+
+  
