@@ -36,26 +36,4 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-// Common properties for container class
-%common-container{
-    padding-right: ($gutter-width / 2);
-    padding-left: ($gutter-width / 2);
-    margin-right: auto;
-    margin-left: auto;
-}
-//Common properties of floated grid columns
-%grid-column-float{
-	position: relative;
-	min-height: 1px; // Prevent columns from collapsing when empty
-	padding-right: ($gutter-width / 2);
-	padding-left: ($gutter-width / 2);
-	float: left;
-}
-//Common properties of flexed grid columns
-%grid-column-flex{
-	position: relative;
-	width: 100%;
-	min-height: 1px; // Prevent columns from collapsing when empty
-	padding-right: ($gutter-width / 2);
-	padding-left: ($gutter-width / 2);
-}
+
