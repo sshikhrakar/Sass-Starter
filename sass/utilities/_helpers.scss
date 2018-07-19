@@ -9,22 +9,22 @@
 
 //Screen reader text:
 .srt{
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 %clearfix-none{
-	display: inherit;
+  display: inherit;
 }
 %pseudos{
-	display: block;
-	content:"";
-	position: absolute;
+  display: block;
+  content:"";
+  position: absolute;
 }
 %shadow{
   -webkit-box-shadow: 0px 8px 12px -6px transparentize($black, 0.8);
@@ -32,8 +32,8 @@
   box-shadow: 0px 8px 12px -6px transparentize($black, 0.8);
 }
 %ellipsis{
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
