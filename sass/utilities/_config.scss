@@ -67,15 +67,15 @@ $ui-colors: (
 //Color Palette
 $palettes: (
 	gray-shades: (
-	  base: $gray,
-	  dark: darken($gray,20%),
-	  light: lighten($gray,20%)
+		base: $gray,
+		dark: darken($gray,20%),
+		light: lighten($gray,20%)
 	),
 	blue-shades: (
 		base: $blue,
-	  dark: darken($blue,20%),
-	  light: lighten($blue,20%)
-	)
+		dark: darken($blue,20%),
+		light: lighten($blue,20%)
+		)
 );
 
 
