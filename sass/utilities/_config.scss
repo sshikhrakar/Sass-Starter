@@ -58,24 +58,24 @@ $xl-device: 1200px;
 
 //UI Colors
 $ui-colors: (
-	default: $blue,
-	success: $success,
-	error: $error,
-	warning: $edit
+  default: $blue,
+  success: $success,
+  error: $error,
+  warning: $edit
 );
 
 //Color Palette
 $palettes: (
-	gray-shades: (
-		base: $gray,
-		dark: darken($gray,20%),
-		light: lighten($gray,20%)
-	),
-	blue-shades: (
-		base: $blue,
-		dark: darken($blue,20%),
-		light: lighten($blue,20%)
-		)
+  gray-shades: (
+    base: $gray,
+    dark: darken($gray,20%),
+    light: lighten($gray,20%)
+  ),
+  blue-shades: (
+    base: $blue,
+    dark: darken($blue,20%),
+    light: lighten($blue,20%)
+  )
 );
 
 
