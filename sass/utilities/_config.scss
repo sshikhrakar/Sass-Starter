@@ -127,31 +127,3 @@ $grid-container: 'container';
 $grid-container-fluid: 'container-fluid';
 $row-name: 'row';
 $type: flex;//type of grid (either 'float' or 'flex' only)
-
-//theme configs
-$theme-config:(
-	default: (
-		theme-heading-1-size: 24px,
-		theme-heading-2-size: 20px,
-		theme-heading-3-size: 18px,
-		theme-primary-btn-size: 14px,
-		theme-secondary-btn-size: 12px,
-		theme-paragraph-size: 16px
-	),
-	large: (
-		theme-heading-1-size: 36px,
-		theme-heading-2-size: 32px,
-		theme-heading-3-size: 28px,
-		theme-primary-btn-size: 18px,
-		theme-secondary-btn-size: 16px,
-		theme-paragraph-size: 20px
-	),
-	small: (
-		theme-heading-1-size: 20px,
-		theme-heading-2-size: 16px,
-		theme-heading-3-size: 14px,
-		theme-primary-btn-size: 11px,
-		theme-secondary-btn-size: 11px,
-		theme-paragraph-size: 12px
-	)
-);

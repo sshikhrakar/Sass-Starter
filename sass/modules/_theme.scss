@@ -1,3 +1,32 @@
-@include make-theme(default);
-@include make-theme(large);
-@include make-theme(small);
+//theme configs
+$theme-config:(
+	compact: (
+    theme-font-size: 12px,
+    theme-padding-tb: 2px
+	),
+	cozy: (
+		theme-font-size: 13px,
+    theme-padding-tb: 6px
+	),
+	comfortable: (
+		theme-font-size: 14px,
+    theme-padding-tb: 8px
+	)
+);
+
+//theme-mixin
+@mixin make-theme($theme-name: 'compact') {
+	body.#{$theme-name}{
+    .list-wrapper {
+      li {
+        font-size: map-get(map-get($theme-config, #{$theme-name}), "theme-font-size");
+        padding-top: map-get(map-get($theme-config, #{$theme-name}), "theme-padding-tb");
+        padding-bottom: map-get(map-get($theme-config, #{$theme-name}), "theme-padding-tb");
+      }
+    }
+	}
+}
+
+@include make-theme(compact);
+@include make-theme(cozy);
+@include make-theme(comfortable);
