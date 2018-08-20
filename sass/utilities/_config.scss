@@ -58,24 +58,24 @@ $xl-device: 1200px;
 
 //UI Colors
 $ui-colors: (
-	default: $blue,
-	success: $success,
-	error: $error,
-	warning: $edit
+  default: $blue,
+  success: $success,
+  error: $error,
+  warning: $edit
 );
 
 //Color Palette
 $palettes: (
-	gray-shades: (
-	  base: $gray,
-	  dark: darken($gray,20%),
-	  light: lighten($gray,20%)
-	),
-	blue-shades: (
-		base: $blue,
-	  dark: darken($blue,20%),
-	  light: lighten($blue,20%)
-	)
+  gray-shades: (
+    base: $gray,
+    dark: darken($gray,20%),
+    light: lighten($gray,20%)
+  ),
+  blue-shades: (
+    base: $blue,
+    dark: darken($blue,20%),
+    light: lighten($blue,20%)
+  )
 );
 
 
@@ -101,29 +101,3 @@ $color-link: $blue;
 
 //Path to Assets
 $path--rel: "../images";
-
-//Grid variables
-$grid-count: 12 !default;
-
-$grid-class: col !default;
-$gutter-width: 30px !default;
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
-) !default;
-
-$grid-container: 'container';
-$grid-container-fluid: 'container-fluid';
-$row-name: 'row';
-$type: flex;//type of grid (either 'float' or 'flex' only)
