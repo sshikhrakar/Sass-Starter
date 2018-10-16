@@ -9,15 +9,19 @@
     <link rel="stylesheet" href="css/style.css">
     <!--endbuild-->
 </head>
-<body>
+<body class="theme-default">
+  <div class="main-container-wrapper">
     <div class="container">
         <h1 class="theme-heading">Theme example</h1>
         <div class="theme-container">
-            <select id="selectTheme">
-                <option selected>Compact</option>
-                <option>Cozy</option>
-                <option>Comfortable</option>
+            <select id="selectThemeColor">
+                <option selected>default</option>
+                <option>light</option>
             </select>
+            <!-- <select id="selectThemeSize">
+                <option selected>default</option>
+                <option>light</option>
+            </select> -->
             <ul class="list-wrapper">
                 <li>
                     <div class="col-sm-3">Leave Management System</div>
@@ -77,10 +81,12 @@
             </ul>
         </div>
     </div>
+  </div>
     <script>
-        document.getElementById("selectTheme").addEventListener('change', function(){
-            console.log('changed');
-            document.getElementsByTagName('body')[0].className = this.value;
+        var body = document.getElementsByTagName('body')[0];
+        document.getElementById("selectThemeColor").addEventListener('change', function(){
+            console.log('changed color');
+            body.className = "theme-" + this.value;
         });
     </script>
 </body>
