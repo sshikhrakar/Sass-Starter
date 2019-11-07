@@ -10,7 +10,7 @@
   	<link rel="stylesheet" href="css/style.css">
 	<!--endbuild-->
 </head>
-<body>
+<body class="theme-default theme-comfortable">
   <div class="example-doc">
     <header>
       <div class="container">
@@ -528,9 +528,134 @@ $palettes: (
 </div>
 
             </div>
+            <div class="Block__segment">
+              <div class="container">
+                <h2>Using grids</h2>
+                <div class="row">
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                  <div class="col-xs-1">
+                    col-xs-1
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-sm-2 col-md-4 col-lg-8">
+                    col-responsive
+                  </div>
+                  <div class="col-sm-10 col-md-8 col-lg-4">
+                    col-responive-second
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Block__segment">
+              <div class="container">
+                <h2>Theming</h2>
+                <p>Find the theme map and functions in the <span class="highlight">_theme.scss</span> partial.</p>
+                <div class="Block__code">
+                  <span>HTML:</span>
+                  <pre>
+&lt;h3&gt;Theming with SASS&lt;/h3&gt;
+                  </pre>
+                </div>
+                <div class="Block__code">
+                  <span>SCSS:</span>
+                  <pre>
+// Theme map
+$themes: (
+  color: (
+    default: (
+      heading-color: #000000,
+      paragraph-color: #353535
+    ),
+    custom: (
+      heading-color: #534D56,
+      paragraph-color: #656176
+    )
+  ),
+  size: (
+    cozy: (
+      heading-font-size: 18px,
+      paragraph-font-size: 12px
+    ),
+    comfortable: (
+      heading-font-size: 22px,
+      paragraph-font-size: 14px
+    )
+  )
+);
+
+h3{
+  margin-bottom: 10px;
+  display: inline-block;
+                  
+  @include themify(theme-type(color)){
+    color: theme-property(heading-color);
+  }
+                  
+  @include themify(theme-type(size)){
+    font-size: theme-property(heading-font-size);
+  }
+}
+                  </pre>
+                </div>
+                <div class="Block__section">
+                  <p>You can test it out by selecting the following.</p>
+                  <div class="Block__form-group">
+                    <label>Color:</label>
+                    <select id="selectColor">
+                      <option>Default</option>
+                      <option>Custom</option>
+                    </select>
+                  </div>
+                  <div class="Block__form-group">
+                    <label>Size:</label>
+                    <select id="selectSize">
+                      <option>Comfortable</option>
+                      <option>Cozy</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="snippet">
+                  <h2 class="snippet__title">Theming demo</h2>
+                  <p class="snippet__paragraph">This is a theming demo with SASS. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
     </main>
     <footer>
       <div class="container">
@@ -543,5 +668,27 @@ $palettes: (
       </div>
     </footer>
   </div>
+
+  <script>
+    let colorClass = "theme-default";
+    let sizeClass = "theme-comfortable";
+
+    let body = document.getElementsByTagName('body')[0];
+
+    let selectColor = document.getElementById('selectColor');
+    let selectSize = document.getElementById('selectSize');
+
+    selectColor.addEventListener('change', (e) => {
+      colorClass = 'theme-' + e.target.value.toLowerCase();
+      body.className = colorClass +  ' ' + sizeClass;
+    });
+
+    selectSize.addEventListener('change', (e) => {
+      sizeClass = 'theme-' + e.target.value.toLowerCase();
+      body.className = colorClass +  ' ' + sizeClass;
+    });
+
+
+  </script>
 </body>
 </html>
