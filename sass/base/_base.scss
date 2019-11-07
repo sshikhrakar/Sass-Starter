@@ -63,3 +63,30 @@ img{
   max-width: 100%;
   vertical-align: top;
 }
+select{
+  border: 1px solid $gray;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 4px;
+  outline: none;
+  color: #ffffff;
+  width: 100%;
+
+  @include themify(theme-type(color)) {
+    background-color: theme-property(select-bg);
+  }
+
+  @include themify(theme-type(size)) {
+    font-size: theme-property(selectFontSize);
+    padding: theme-property(selectPadding);
+  }
+
+  &:focus{
+    outline: none;
+    border-color: $light-blue;
+  }
+}
+option {
+  background-color: $white;
+  color: $black;
+}

@@ -13,10 +13,14 @@
 // @import 'bootstrap';
 /* Sass Compiled Bootstrap Code End */
 
-@import 'config';
+@import '_config';
 @import 'helpers';
-@import 'utilities';
+@import '_utilities';
 
 /* Sass Compiled Custom Grid Code Start */
 @import 'grid';
 /* Sass Compiled Custom Grid Code End */
+
+/* Sass Compiled Theme Code Start */
+@import 'theme';
+/* Sass Compiled Theme Code End */
