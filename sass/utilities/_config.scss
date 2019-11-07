@@ -42,6 +42,7 @@ $black: #000;
 $gray: #c7c7c7;
 $red: #D24D57;
 $blue: #3A539B;
+$light-blue: #009BDE;
 $yellow: #F7CA18;
 $green: #36D7B7;
 
@@ -51,30 +52,31 @@ $success: $green !default;
 $edit: $yellow !default;
 
 //Breakpoints
-$sm-device: 768px;
-$md-device: 992px;
-$lg-device: 1200px;
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1200px;
 
 //UI Colors
 $ui-colors: (
-	default: $blue,
-	success: $success,
-	error: $error,
-	warning: $edit
+  default: $blue,
+  success: $success,
+  error: $error,
+  warning: $edit
 );
 
 //Color Palette
 $palettes: (
-	gray-shades: (
-	  base: $gray,
-	  dark: darken($gray,20%),
-	  light: lighten($gray,20%)
-	),
-	blue-shades: (
-		base: $blue,
-	  dark: darken($blue,20%),
-	  light: lighten($blue,20%)
-	)
+  gray-shades: (
+    base: $gray,
+    dark: darken($gray,20%),
+    light: lighten($gray,20%)
+  ),
+  blue-shades: (
+    base: $blue,
+    dark: darken($blue,20%),
+    light: lighten($blue,20%)
+  )
 );
 
 

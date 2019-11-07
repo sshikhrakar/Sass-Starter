@@ -1,0 +1,100 @@
+$themes: (
+  color: (
+    default: (
+      body: #000000,
+      header-bg-left: #DD2476,
+      header-bg-right: #FF512F,
+      header-font: #FFFFFF,
+      main-bg: #F5F5F5,
+      heading: #000000,
+      heading-underline-bold: #DF2771,
+      heading-underline-normal: #C7C7C7,
+      tree-bg: #525A96,
+      tree-border: #3543A9,
+      highlight: #DADADA,
+      pre-bg: #525A96,
+      pre-border: #3543A9,
+      pre-font: #FFFFFF,
+      box-bg: #F7CA18,
+      footer-bg: #DF2771,
+      snippet-bg: #ffffff,
+      select-bg: #df2771
+    ),
+    custom: (
+      body: #000000,
+      header-bg-left: #1B998B,
+      header-bg-right: #656176,
+      header-font: #FFFFFF,
+      main-bg: #FFFFFF,
+      heading: #534D56,
+      heading-underline-bold: #1B998B,
+      heading-underline-normal: #656176,
+      tree-bg: #656176,
+      tree-border: #534D56,
+      highlight: #C2DFE3,
+      pre-bg: #656176,
+      pre-border: #534D56,
+      pre-font: #FFFFFF,
+      box-bg: #1B998B,
+      footer-bg: #1B998B,
+      snippet-bg: #f5f5f5,
+      select-bg: #1B9988
+    )
+  ),
+  size: (
+    cozy: (
+      headerHeadingFont: 32px,
+      headerSubheadingFont: 14px,
+      headerParagraphFont: 16px,
+      headerPadding: 20px 0,
+      componentHeadingFont: 18px,
+      componentSubheadingFont: 16px,
+      componentParagraphFont: 12px,
+      componentPadding: 15px 0,
+      blockSegmentPadding: 8px 0,
+      dottedMarginTop: 20px,
+      preComponentFont: 12px,
+      selectPadding: 6px 8px,
+      selectFontSize: 12px
+  	),
+  	comfortable: (
+      headerHeadingFont: 46px,
+      headerSubheadingFont: 16px,
+      headerParagraphFont: 18px,
+      headerPadding: 40px 0,
+      componentHeadingFont: 22px,
+      componentSubheadingFont: 18px,
+      componentParagraphFont: 16px,
+      componentPadding: 30px 0,
+      blockSegmentPadding: 20px 0,
+      dottedMarginTop: 30px,
+      preComponentFont: 14px,
+      selectPadding: 8px 16px,
+      selectFontSize: 14px
+  	)
+  )
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+@function theme-property($key) {
+  @return map-get($theme-map, $key);
+}
+
+@function theme-type($type){
+  @return map-get($themes, $type);
+}

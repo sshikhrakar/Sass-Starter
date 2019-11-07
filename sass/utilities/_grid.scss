@@ -1,0 +1,172 @@
+// ==========================================================================
+// Grid
+// Generates grid
+// ==========================================================================
+
+//Grid variables
+$grid-count: 12 !default;
+
+$grid-class: col !default;
+$gutter-width: 30px !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $sm-device,
+  md: $md-device,
+  lg: $lg-device,
+  xl: $xl-device
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-container: 'container';
+$grid-container-fluid: 'container-fluid';
+$row-name: 'row';
+$grid-type: float;//type of grid (either 'float' or 'flex' only)
+
+// Common properties for container class
+%common-container{
+  padding-right: ($gutter-width / 2);
+  padding-left: ($gutter-width / 2);
+  margin-right: auto;
+  margin-left: auto;
+}
+//Common properties of floated grid columns
+%grid-column-float{
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  padding-right: ($gutter-width / 2);
+  padding-left: ($gutter-width / 2);
+  float: left;
+}
+//Common properties of flexed grid columns
+%grid-column-flex{
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  padding-right: ($gutter-width / 2);
+  padding-left: ($gutter-width / 2);
+}
+
+
+// Container mixin
+// $container-name - class name of container
+@mixin make-container($container-name: $grid-container-fluid){
+  .#{$container-name}{
+    width: 100%;
+    @extend %common-container;
+  }
+}
+
+// Container mixin - for defining container widths in each breakpoints
+// $breakpoints    - map with respective breakpoint names and values
+// $max-width      - map with respective breakpoint names and values for container maxwidths
+// Make changes to $container-max-widths map to make changes in container width 
+@mixin make-container-fixed-width($breakpoints:$grid-breakpoints, $max-width: $container-max-widths, $container-name: $grid-container){
+  @each $size-name, $container-width in $max-width{
+    @include mq($size-name){
+      .#{$container-name}{
+        width: 100%;
+        max-width: map-get($max-width, $size-name);
+      }
+    }
+  }
+  .#{$container-name}{
+    @extend %common-container;
+  }
+}
+
+// Row mixin
+// $row-name    - class name for row
+@mixin make-row($row-name: $row-name){
+  .#{$row-name}{
+    @if $grid-type == 'flex'{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    margin-right: ($gutter-width / -2);
+    margin-left: ($gutter-width / -2);
+  }
+}
+
+// Flex column mixin
+// Ported from bootstrap
+// $columns    - total number of columns
+// $size       - Size of column (Eg. 1,2,6,...)
+@mixin make-col-flex($size, $columns: $grid-columns){
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+  
+// Float column mixin
+// $columns    - total number of columns
+// $size       - Size of column (Eg. 1,2,6,...)
+@mixin make-col-float($size, $columns: $grid-columns){
+  width: percentage($size / $columns);
+}
+
+// Grid classes mixin
+// $columns     - total number of columns
+// $gutter      - spacing between the grid columns
+// $grid-class  - grid class name (Eg: 'col' in col-xs-1)
+// $breakpoints - Map for breakpoints
+// $grid-type        - type of grid (either 'float' or 'flex')
+@mixin make-grid( $columns: $grid-count, $gutter: $gutter-width, $grid-class: $grid-class, $breakpoints: $grid-breakpoints, $grid-type: $grid-type ){
+  @each $name, $breakpoint in $breakpoints{
+    //Generates common styles for grid classes
+    @for $i from 1 through $columns{
+      .#{$grid-class}-#{$name}-#{$i}{
+        @if $grid-type == 'flex'{
+          @extend %grid-column-flex;
+        }
+        @else if $grid-type == 'float'{
+          @extend %grid-column-float;
+        }
+      }
+    }
+    //Generates breakpoint wise grid classes
+    @include mq($name){
+      @if $grid-type == 'flex'{
+        // Provides basic `.col-{bp}` classes for equal-width flexbox columns 
+        // Ported from bootstrap 4
+        .#{$grid-class}-#{$name}{
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+        .#{$grid-class}-#{$name}-auto{
+          flex: 0 0 auto;
+          width: auto;
+          max-width: none; // Reset earlier grid tiers
+        }
+      }
+      @for $i from 1 through $columns{
+        .#{$grid-class}-#{$name}-#{$i}{
+          @if $grid-type == 'flex'{
+            @include make-col-flex($i, $columns);
+          }
+          @else if $grid-type == 'float'{
+            @include make-col-float($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+ 
+@include make-container;
+@include make-container-fixed-width;
+@include make-row;
+  
+@if ($grid-type == 'flex' or $grid-type == 'float'){ 
+  @include make-grid;
+} 
+@else{
+  @error "$grid-type should be 'flex' or 'float'";
+}
