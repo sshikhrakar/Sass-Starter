@@ -39,7 +39,7 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.5",
     "concurrently": "^3.6.1",
     "cpx": "^1.5.0",
     "del": "^2.2.2",
