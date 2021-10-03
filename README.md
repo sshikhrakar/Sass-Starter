@@ -35,7 +35,7 @@ Visit this [link](https://sshikhrakar.github.io/Sass-Starter/) for documentation
 
 ### Prerequisites
 ```
-1. Node/NPM
+1. Node/NPM >= 12
 2. Yarn (recommended/optional)
 ```
 
