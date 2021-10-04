@@ -42,9 +42,7 @@
     "browser-sync": "^2.27.5",
     "concurrently": "^3.6.1",
     "cpx": "^1.5.0",
-    "del": "^2.2.2",
     "gh-pages": "^1.2.0",
-    "rimraf": "^2.7.1",
-    "run-sequence": "^1.2.2"
+    "rimraf": "^2.7.1"
   }
 }
