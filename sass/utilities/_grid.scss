@@ -31,8 +31,8 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
 
 // Common properties for container class
 %common-container{
-  padding-right: ($gutter-width / 2);
-  padding-left: ($gutter-width / 2);
+  padding-right: calc($gutter-width / 2);
+  padding-left: calc($gutter-width / 2);
   margin-right: auto;
   margin-left: auto;
 }
@@ -41,8 +41,8 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
   position: relative;
   width: 100%;
   min-height: 1px; // Prevent columns from collapsing when empty
-  padding-right: ($gutter-width / 2);
-  padding-left: ($gutter-width / 2);
+  padding-right: calc($gutter-width / 2);
+  padding-left: calc($gutter-width / 2);
   float: left;
 }
 //Common properties of flexed grid columns
@@ -50,8 +50,8 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
   position: relative;
   width: 100%;
   min-height: 1px; // Prevent columns from collapsing when empty
-  padding-right: ($gutter-width / 2);
-  padding-left: ($gutter-width / 2);
+  padding-right: calc($gutter-width / 2);
+  padding-left: calc($gutter-width / 2);
 }
 
 
@@ -67,7 +67,7 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
 // Container mixin - for defining container widths in each breakpoints
 // $breakpoints    - map with respective breakpoint names and values
 // $max-width      - map with respective breakpoint names and values for container maxwidths
-// Make changes to $container-max-widths map to make changes in container width 
+// Make changes to $container-max-widths map to make changes in container width
 @mixin make-container-fixed-width($breakpoints:$grid-breakpoints, $max-width: $container-max-widths, $container-name: $grid-container){
   @each $size-name, $container-width in $max-width{
     @include mq($size-name){
@@ -90,8 +90,8 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
       display: flex;
       flex-wrap: wrap;
     }
-    margin-right: ($gutter-width / -2);
-    margin-left: ($gutter-width / -2);
+    margin-right: calc($gutter-width / -2);
+    margin-left: calc($gutter-width / -2);
   }
 }
 
@@ -100,15 +100,15 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
 // $columns    - total number of columns
 // $size       - Size of column (Eg. 1,2,6,...)
 @mixin make-col-flex($size, $columns: $grid-columns){
-  flex: 0 0 percentage($size / $columns);
-  max-width: percentage($size / $columns);
+  flex: 0 0 percentage(calc($size / $columns));
+  max-width: percentage(calc($size / $columns));
 }
-  
+
 // Float column mixin
 // $columns    - total number of columns
 // $size       - Size of column (Eg. 1,2,6,...)
 @mixin make-col-float($size, $columns: $grid-columns){
-  width: percentage($size / $columns);
+  width: percentage(calc($size / $columns));
 }
 
 // Grid classes mixin
@@ -133,7 +133,7 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
     //Generates breakpoint wise grid classes
     @include mq($name){
       @if $grid-type == 'flex'{
-        // Provides basic `.col-{bp}` classes for equal-width flexbox columns 
+        // Provides basic `.col-{bp}` classes for equal-width flexbox columns
         // Ported from bootstrap 4
         .#{$grid-class}-#{$name}{
           flex-basis: 0;
@@ -159,14 +159,14 @@ $grid-type: float;//type of grid (either 'float' or 'flex' only)
     }
   }
 }
- 
+
 @include make-container;
 @include make-container-fixed-width;
 @include make-row;
-  
-@if ($grid-type == 'flex' or $grid-type == 'float'){ 
+
+@if ($grid-type == 'flex' or $grid-type == 'float'){
   @include make-grid;
-} 
+}
 @else{
   @error "$grid-type should be 'flex' or 'float'";
 }
