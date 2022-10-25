@@ -20,7 +20,8 @@
     "start": "concurrently \"npm:watch-html\" \"npm:watch-js\" \"npm:watch-images\" \"npm:watch-fonts\" \"npm:watch-sass\" \"npm:serve\"",
     "build": "npm install && npm run clean-dist && npm run sass && npm run imagemin && npm run fonts && npm run js && npm run html",
     "serve": "browser-sync start --server \"dist\" --files \"dist\" --port 8081",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "cpx2": "^4.2.0",
     "imagemin-cli": "^7.0.0",
+    "prettier": "^2.7.1",
     "sass": "^1.55.0"
   },
   "dependencies": {

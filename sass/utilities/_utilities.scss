@@ -6,7 +6,7 @@
 //Font Imports
 
 //Provide url in '$font-url--google' variable from '_config.scss' partial
-@if variable-exists(font-url--google){
+@if variable-exists(font-url--google) {
   @import url($font-url--google); // CSS font import from Google CDN
 }
 
@@ -16,9 +16,8 @@
       font-family: map-get(map-get($typefaces, $file), family);
       font-style: map-get(map-get($typefaces, $file), style);
       font-weight: map-get(map-get($typefaces, $file), weight);
-      src: url('../fonts/#{$file}.ttf') format('truetype'),
-           url('../fonts/#{$file}.woff') format('woff'),
-           url('../fonts/#{$file}.woff2') format('woff2');
+      src: url('../fonts/#{$file}.ttf') format('truetype'), url('../fonts/#{$file}.woff') format('woff'),
+        url('../fonts/#{$file}.woff2') format('woff2');
     }
   }
 }
@@ -28,7 +27,7 @@
 // Add pixel unit
 // $value     - Value for adding px unit
 // @returns   - number
-@function addPxUnit($value){
+@function addPxUnit($value) {
   @if unitless($value) {
     $value: $value * 1px;
   }
@@ -39,17 +38,17 @@
 // $target    - Value to be converted into em
 // $context   - Default: Base font size. Base font size is usually 16px depending on browser default font size
 // @returns   - number
-@function em($target, $context: $base__font-size){
+@function em($target, $context: $base__font-size) {
   $target: addPxUnit($target);
   $context: addPxUnit($context);
-  @return($target/$context) * 1em;
+  @return ($target/$context) * 1em;
 }
 
 // Convert pixels to rem
 // $target    - Value to be converted into rem
 // $context   - Default: Base font size. Base font size is usually 16px depending on browser default font size
 // @returns   - number
-@function rem($target, $context: $base__font-size){
+@function rem($target, $context: $base__font-size) {
   $target: addPxUnit($target);
   $context: addPxUnit($context);
   @return $target/$context * 1rem;
@@ -59,7 +58,7 @@
 // $target    - Value to be converted into percentage
 // $context   - Context on which target needs to be relative to for percentage conversion
 // @returns   - number
-@function pntg($target, $context){
+@function pntg($target, $context) {
   @return ($target/$context) * 100%;
 }
 
@@ -68,18 +67,17 @@
 // $shade     - Key of provide $palette map
 // base       - Default key of $shade under $palette map
 // @returns   - map
-@function palette($palette, $shade: base){
+@function palette($palette, $shade: base) {
   @return map-get(map-get($palettes, $palette), $shade);
 }
 
 // Calculate if number is even or not
 // $number    - Number to be verified
 // @returns   - boolean
-@function even($number){
-  @if $number%2 == 0{
+@function even($number) {
+  @if $number%2 == 0 {
     @return true;
-  }
-  @else{
+  } @else {
     @return false;
   }
 }
@@ -91,9 +89,9 @@
 // $theme  - Key of provided map from $map
 // $color  - Value of provided map from $map
 // @usage  - `.message {@include bg-colors($ui-colors);}`
-@mixin bg-colors($map){
-  @each $theme, $color in $map{
-    &--#{$theme}{
+@mixin bg-colors($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
       background: $color;
     }
   }
@@ -103,8 +101,8 @@
 // For Element
 // $element  - Just the element name for the parent block (doesn't require the parent Block name)
 // @usage    - `.Nav {@include e(item){...}}`
-@mixin e($element){
-  &__#{$element}{
+@mixin e($element) {
+  &__#{$element} {
     @content;
   }
 }
@@ -112,8 +110,8 @@
 // For Modifier
 // $modifier  - Just the modifier name for the parent block or element
 // @usage     - `.Nav {@include e(item) {@include m(active) {...}}}`
-@mixin m($modifier){
-  &--#{$modifier}{
+@mixin m($modifier) {
+  &--#{$modifier} {
     @content;
   }
 }
@@ -121,31 +119,31 @@
 // Media Queries
 // $break  - RWD break point values, change them in _config.scss. Default: bootstrap grid
 // @usage  - `.Nav {@include mq(sm) {...}}`
-@mixin mq($break){
-  @if $break == "xs" {//lowest breakpoint value
+@mixin mq($break) {
+  @if $break == 'xs' {
+    //lowest breakpoint value
     @content;
-  }
-  @else if $break == "sm" {// phone
-    @media(min-width: $sm-device){
+  } @else if $break == 'sm' {
+    // phone
+    @media (min-width: $sm-device) {
       @content;
     }
-  }
-  @else if $break == "md" {// tablet
-    @media(min-width: $md-device){
+  } @else if $break == 'md' {
+    // tablet
+    @media (min-width: $md-device) {
       @content;
     }
-  }
-  @else if $break == "lg" {// laptop and desktop
-    @media(min-width: $lg-device){
+  } @else if $break == 'lg' {
+    // laptop and desktop
+    @media (min-width: $lg-device) {
       @content;
     }
-  }
-  @else if $break == "xl" {// High res desktop and TVs
-    @media(min-width: $xl-device){
+  } @else if $break == 'xl' {
+    // High res desktop and TVs
+    @media (min-width: $xl-device) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @error "No value could be retrieved for '#{$break}'";
   }
 }
@@ -164,9 +162,9 @@
 // Ellipsis mixin
 // $width  - Value of width or max value of cutoff point in px
 // @usage  - `.Text--info {@include ellipsis(120px) {...}}`
-@mixin ellipsis($width){
+@mixin ellipsis($width) {
   @extend %ellipsis;
-  width : $width;
+  width: $width;
 }
 
 //Turn px in rem with px fallback
@@ -180,17 +178,15 @@
 // $el-width   - Width for the pseudo element in px
 // $el-height  - Height for the pseudo element in px
 // @usage      - `.dropdown {@include psuedo-el('before') {...}}`
-@mixin psuedo-el($el, $el-width: null, $el-height: null){
-  @if $el == 'before' or $el == 'after'{
-    &:#{$el}{
+@mixin psuedo-el($el, $el-width: null, $el-height: null) {
+  @if $el == 'before' or $el == 'after' {
+    &:#{$el} {
       @extend %pseudos;
       width: $el-width;
       height: $el-height;
       @content;
     }
-  }
-  @else{
+  } @else {
     @warn "#{$el} is not a valid pseudo-element";
   }
 }
- 

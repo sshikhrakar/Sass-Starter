@@ -10,26 +10,26 @@
 
 // Hidden for mobile devices
 .is-collapsed-mobile {
-	@include mq(sm){
-		visibility: collapse;
-		padding: 0;
-		height: 0;
-		margin: 0;
-		line-height: 0;
-	}
+  @include mq(sm) {
+    visibility: collapse;
+    padding: 0;
+    height: 0;
+    margin: 0;
+    line-height: 0;
+  }
 }
 
 // Hidden for desktops
 .is-displayed-mobile {
-	@include mq(sm){
-		display: block;
-		@at-root (with:media){
-			.is-hidden-mobile{
-				display: none;
-			}
-		}
-	}
-	@include mq(md){
-		display: none;
-	}
+  @include mq(sm) {
+    display: block;
+    @at-root (with: media) {
+      .is-hidden-mobile {
+        display: none;
+      }
+    }
+  }
+  @include mq(md) {
+    display: none;
+  }
 }

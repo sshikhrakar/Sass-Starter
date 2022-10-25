@@ -9,19 +9,19 @@ Visit this [link](https://sshikhrakar.github.io/Sass-Starter/) for documentation
 
 ## Features
 
-* SMACSS structure for SASS.
-* Mixins for BEM naming conventions and Media queries.
-* SASS functions for unit conversions.
-* Bootstrap Grid and Print CSS.
-* Normalize CSS.
-* Live reloading with BrowserSync.
-* Packages such as JS/CSS minification and CSS autoprefixer included.
+- SMACSS structure for SASS.
+- Mixins for BEM naming conventions and Media queries.
+- SASS functions for unit conversions.
+- Bootstrap Grid and Print CSS.
+- Normalize CSS.
+- Live reloading with BrowserSync.
+- Packages such as JS/CSS minification and CSS autoprefixer included.
 
 ## Getting Started
 
 #### Initial Checks:
 
-* Install `node` and `npm`, `yarn` (recommended) if not installed.
+- Install `node` and `npm`, `yarn` (recommended) if not installed.
 
 #### Installation:
 
@@ -34,6 +34,7 @@ Visit this [link](https://sshikhrakar.github.io/Sass-Starter/) for documentation
 > Include or remove bootstrap at `utilities/_manifest.scss`.
 
 ### Prerequisites
+
 ```
 1. Node/NPM >= 12
 2. Yarn (recommended/optional)
@@ -59,6 +60,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 ## Acknowledgments
 
 This project uses awesome work of other projects:
-* [normalize.css](http://necolas.github.io/normalize.css/)
-* [bootstrap](https://github.com/twbs/bootstrap)
-* [SMACSS](https://smacss.com/)
+
+- [normalize.css](http://necolas.github.io/normalize.css/)
+- [bootstrap](https://github.com/twbs/bootstrap)
+- [SMACSS](https://smacss.com/)
