@@ -8,7 +8,7 @@
     "fonts": "cpx fonts/**/* dist/fonts",
     "js": "cpx js/**/* dist/js",
     "images": "cpx images/**/* dist/images/",
-    "sass": "node-sass --source-map true sass/style.scss -o dist/css/",
+    "sass": "sass sass/style.scss dist/css/style.css",
     "watch-html": "cpx \"*.html\" dist/ --watch",
     "watch-fonts": "cpx fonts/**/* dist/fonts --watch",
     "watch-js": "cpx js/**/* dist/js/ --watch",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "connect-history-api-fallback": "^1.6.0",
     "imagemin-cli": "^7.0.0",
-    "node-sass": "^6.0.1"
+    "sass": "^1.55.0"
   },
   "dependencies": {
     "browser-sync": "^2.27.5",
