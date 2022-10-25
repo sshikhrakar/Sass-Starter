@@ -13,7 +13,7 @@
     "watch-fonts": "cpx fonts/**/* dist/fonts --watch",
     "watch-js": "cpx js/**/* dist/js/ --watch",
     "watch-images": "cpx images/**/* dist/images/ --watch",
-    "watch-sass": "node-sass --source-map true sass/style.scss -wo dist/css/",
+    "watch-sass": "sass -w sass/style.scss dist/css/style.css",
     "clean": "rimraf dist/",
     "clean-dist": "rimraf dist/**/* !dist/images/ ! dist/images/**/*",
     "imagemin": "imagemin images/**/* --out-dir=dist/images/",
