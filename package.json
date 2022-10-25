@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/sshikhrakar/Sass-Starter#readme",
   "devDependencies": {
+    "concurrently": "^6.5.1",
     "connect-history-api-fallback": "^1.6.0",
     "cpx2": "^4.2.0",
     "imagemin-cli": "^7.0.0",
@@ -40,7 +41,6 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.10",
-    "concurrently": "^6.3.0",
     "gh-pages": "^3.2.3",
     "rimraf": "^3.0.2"
   }
