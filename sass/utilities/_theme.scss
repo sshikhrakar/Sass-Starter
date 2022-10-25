@@ -2,43 +2,43 @@ $themes: (
   color: (
     default: (
       body: #000000,
-      header-bg-left: #DD2476,
-      header-bg-right: #FF512F,
-      header-font: #FFFFFF,
-      main-bg: #F5F5F5,
+      header-bg-left: #dd2476,
+      header-bg-right: #ff512f,
+      header-font: #ffffff,
+      main-bg: #f5f5f5,
       heading: #000000,
-      heading-underline-bold: #DF2771,
-      heading-underline-normal: #C7C7C7,
-      tree-bg: #525A96,
-      tree-border: #3543A9,
-      highlight: #DADADA,
-      pre-bg: #525A96,
-      pre-border: #3543A9,
-      pre-font: #FFFFFF,
-      box-bg: #F7CA18,
-      footer-bg: #DF2771,
+      heading-underline-bold: #df2771,
+      heading-underline-normal: #c7c7c7,
+      tree-bg: #525a96,
+      tree-border: #3543a9,
+      highlight: #dadada,
+      pre-bg: #525a96,
+      pre-border: #3543a9,
+      pre-font: #ffffff,
+      box-bg: #f7ca18,
+      footer-bg: #df2771,
       snippet-bg: #ffffff,
       select-bg: #df2771
     ),
     custom: (
       body: #000000,
-      header-bg-left: #1B998B,
+      header-bg-left: #1b998b,
       header-bg-right: #656176,
-      header-font: #FFFFFF,
-      main-bg: #FFFFFF,
-      heading: #534D56,
-      heading-underline-bold: #1B998B,
+      header-font: #ffffff,
+      main-bg: #ffffff,
+      heading: #534d56,
+      heading-underline-bold: #1b998b,
       heading-underline-normal: #656176,
       tree-bg: #656176,
-      tree-border: #534D56,
-      highlight: #C2DFE3,
+      tree-border: #534d56,
+      highlight: #c2dfe3,
       pre-bg: #656176,
-      pre-border: #534D56,
-      pre-font: #FFFFFF,
-      box-bg: #1B998B,
-      footer-bg: #1B998B,
+      pre-border: #534d56,
+      pre-font: #ffffff,
+      box-bg: #1b998b,
+      footer-bg: #1b998b,
       snippet-bg: #f5f5f5,
-      select-bg: #1B9988
+      select-bg: #1b9988
     )
   ),
   size: (
@@ -56,8 +56,8 @@ $themes: (
       preComponentFont: 12px,
       selectPadding: 6px 8px,
       selectFontSize: 12px
-  	),
-  	comfortable: (
+    ),
+    comfortable: (
       headerHeadingFont: 46px,
       headerSubheadingFont: 16px,
       headerParagraphFont: 18px,
@@ -71,23 +71,26 @@ $themes: (
       preComponentFont: 14px,
       selectPadding: 8px 16px,
       selectFontSize: 14px
-  	)
+    )
   )
 );
 
 @mixin themify($themes) {
   @each $theme, $map in $themes {
-
     .theme-#{$theme} & {
       $theme-map: () !global;
       @each $key, $value in $map {
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
       }
 
       @content;
       $theme-map: null !global;
     }
-
   }
 }
 
@@ -95,6 +98,6 @@ $themes: (
   @return map-get($theme-map, $key);
 }
 
-@function theme-type($type){
+@function theme-type($type) {
   @return map-get($themes, $type);
 }

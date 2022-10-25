@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sass Starter</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-	<!--build:css css/style.css-->
-  	<link rel="stylesheet" href="css/style.css">
-	<!--endbuild-->
-</head>
-<body class="theme-default theme-comfortable">
-  <div class="example-doc">
-    <header>
-      <div class="container">
-        <h1>Sass Starter</h1>
-        <p class="sub-header">SCSS for SMACSS</p>
-        <p>Starter code for SASS based on Scalar and Modular Architecture for CSS (SMACSS).
-          SMACSS (pronounced “smacks”) is more style guide than rigid framework. This allows for more customization to the structure as we see fit.
-        </p>
-      </div>
-    </header>
-    <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sass Starter</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!--build:css css/style.css-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--endbuild-->
+  </head>
+  <body class="theme-default theme-comfortable">
+    <div class="example-doc">
+      <header>
+        <div class="container">
+          <h1>Sass Starter</h1>
+          <p class="sub-header">SCSS for SMACSS</p>
+          <p>
+            Starter code for SASS based on Scalar and Modular Architecture for CSS (SMACSS). SMACSS (pronounced
+            “smacks”) is more style guide than rigid framework. This allows for more customization to the structure as
+            we see fit.
+          </p>
+        </div>
+      </header>
+      <main>
         <div class="Block">
           <div class="container">
             <h2>SASS Folder Structure:</h2>
@@ -29,18 +31,21 @@
               <li>
                 sass
                 <ul>
-                  <li>base
-                      <ul>
-                        <li>_base.scss</li>
-                        <li>_manifest.scss</li>
-                      </ul>
+                  <li>
+                    base
+                    <ul>
+                      <li>_base.scss</li>
+                      <li>_manifest.scss</li>
+                    </ul>
                   </li>
-                  <li>libs
+                  <li>
+                    libs
                     <ul>
                       <li>_manifest.scss</li>
                     </ul>
                   </li>
-                  <li>modules
+                  <li>
+                    modules
                     <ul>
                       <li>_example.scss</li>
                       <li>_extends.scss</li>
@@ -48,14 +53,16 @@
                       <li>_modules.scss</li>
                     </ul>
                   </li>
-                  <li>states
+                  <li>
+                    states
                     <ul>
                       <li>_manifest.scss</li>
                       <li>_print.scss</li>
                       <li>_states.scss</li>
                     </ul>
                   </li>
-                  <li>utilities
+                  <li>
+                    utilities
                     <ul>
                       <li>bootstrap</li>
                       <li>_bootstrap.scss</li>
@@ -79,21 +86,20 @@
             <h2>Using Mixins:</h2>
             <div class="Block__segment">
               <h3>Using Media query Mixins:</h3>
-              <p>Find the mixin for media query under
-                 <span class="highlight">utilities/_utilities.scss</span>.
-                 Responsive web design for Sass Starter is based on Mobile first design
-                 and media query breakpoints are based on bootstrap breakpoints.
-                 Breakpoints variables can be customized according to your
-                 needs at
-                 <span class="highlight">utilities/_config.scss</span>.
+              <p>
+                Find the mixin for media query under <span class="highlight">utilities/_utilities.scss</span>.
+                Responsive web design for Sass Starter is based on Mobile first design and media query breakpoints are
+                based on bootstrap breakpoints. Breakpoints variables can be customized according to your needs at
+                <span class="highlight">utilities/_config.scss</span>.
               </p>
               <div class="Block__code">
                 <span>HTML:</span>
                 <pre>&lt;div class="Box"&gt;&lt;/div&gt;</pre>
               </div>
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>.Box{
+              <div class="Block__code">
+                <span>SCSS:</span>
+                <pre>
+.Box{
   // For mobile devices of size less than 768px put code here
   width: 20px;
   height: 20px;
@@ -116,12 +122,14 @@
     height: 100px;
     background: yellow;
   }
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<pre>.Box{
+              <div class="Block__code">
+                <span>CSS Output:</span>
+                <pre>
+.Box{
   width: 20px;
   height: 20px;
   background: red;
@@ -149,97 +157,99 @@
     height: 100px;
     background: yellow;
   }
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-  <span>Example:</span>
-  <span>Resize browser window to see effect.</span>
-  <div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-    <div class="Box"></div>
-  </div>
-</div>
+              <div class="Block__code">
+                <span>Example:</span>
+                <span>Resize browser window to see effect.</span>
+                <div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                  <div class="Box"></div>
+                </div>
+              </div>
+            </div>
 
-</div>
+            <div class="Block__segment">
+              <h3>Using BEM Mixins:</h3>
+              <p>Find the mixin for BEM under <span class="highlight">utilities/_utilities.scss</span>.</p>
+              <div class="dotted">
+                <h3>Block</h3>
+                <p>
+                  Block is a top-level abstraction of a new component. It is top in the hierarchy for this naming
+                  convention. Blocks can be nested with other blocks but they are independent to each other with no
+                  precedence in hierarchy.
+                </p>
+                <p>
+                  We should use class name selector only; ids and tag names should not be used. CSS code should be
+                  independent from all other blocks and html elements.
+                </p>
 
+                <div class="Block__code">
+                  <span>HTML:</span>
+                  <pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
+                </div>
 
-<div class="Block__segment">
-  <h3>Using BEM Mixins:</h3>
-  <p>Find the mixin for BEM under
-     <span class="highlight">utilities/_utilities.scss</span>.
-   </p>
-<div class="dotted">
-<h3>Block</h3>
-<p>
-Block is a top-level abstraction of a new component. It is top in the hierarchy for this naming convention.
-Blocks can be nested with other blocks but they are independent to each other with no precedence in hierarchy.
-</p>
-<p>We should use class name selector only; ids and tag names should not be used. CSS code should be
-  independent from all other
-  blocks and html elements.</p>
-
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;ul class="Nav"&gt;...&lt;/ul&gt;</pre>
-</div>
-
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Here ".nav" class selector is a Block
+                <div class="Block__code">
+                  <span>SCSS:</span>
+                  <pre>
+// Here ".nav" class selector is a Block
 .Nav {
   padding: 10px 0;
-}</pre>
-</div>
+}</pre
+                  >
+                </div>
+              </div>
 
-</div>
-
-<div class="dotted">
-  <h3>Element</h3>
-  <p>
-    Element is child elements inside of Block element and gives specific meaning to its elements.
-    Elements have their
-    meaning always derived from its respective parent block.
-  </p>
-  <p>
-    CSS class is formed as block name plus two underscores plus element name.
-    Example:
-    <span class="highlight">.block__elem</span>
-    Element naming can also have a single dash.
-    Example: <span class="highlight">.Patient__info-detail</span>
-  </p>
-  <p>
-    We should use class name selector only, ids and tag names should not be used. CSS code should be independent from all other
-    blocks and html elements.
-  </p>
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;ul class="Nav"&gt;
+              <div class="dotted">
+                <h3>Element</h3>
+                <p>
+                  Element is child elements inside of Block element and gives specific meaning to its elements. Elements
+                  have their meaning always derived from its respective parent block.
+                </p>
+                <p>
+                  CSS class is formed as block name plus two underscores plus element name. Example:
+                  <span class="highlight">.block__elem</span>
+                  Element naming can also have a single dash. Example:
+                  <span class="highlight">.Patient__info-detail</span>
+                </p>
+                <p>
+                  We should use class name selector only, ids and tag names should not be used. CSS code should be
+                  independent from all other blocks and html elements.
+                </p>
+                <div class="Block__code">
+                  <span>HTML:</span>
+                  <pre>
+&lt;ul class="Nav"&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
 &lt;/ul>
-</pre>
-</div>
+</pre
+                  >
+                </div>
 
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+                <div class="Block__code">
+                  <span>SCSS:</span>
+                  <pre>
+// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
   padding: 10px 0;
   @include e(item){ //'e' is small for element
     float: left;
     margin-right: 10px;
   }
-}</pre>
-</div>
+}</pre
+                  >
+                </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<p>Output is completely independent from the parent block class selectors.</p>
-<pre>
+                <div class="Block__code">
+                  <span>CSS Output:</span>
+                  <p>Output is completely independent from the parent block class selectors.</p>
+                  <pre>
 .Nav {
   padding: 10px 0;
 }
@@ -247,37 +257,39 @@ Blocks can be nested with other blocks but they are independent to each other wi
 .Nav__item{
   float: left;
   margin-right: 10px;
-}</pre>
-</div>
+}</pre
+                  >
+                </div>
+              </div>
 
-</div>
+              <div class="dotted">
+                <h3>Modifier</h3>
+                <p>
+                  Modifier is used to modify blocks or elements. CSS class will be formed by added two dashes to block’s
+                  or element’s class name. Example: <span class="highlight">.block--mod</span> or
+                  <span class="highlight">.block__elem--mod</span> Modifier naming can also have a single dash. Example:
+                  <span class="highlight">.Box__row--gray-bg</span>
+                </p>
+                <p>
+                  We should use class name selector only, ids and tag names should not be used. CSS code should be
+                  independent from all other blocks and html elements.
+                </p>
 
-<div class="dotted">
-<h3>Modifier</h3>
-<p>
-  Modifier is used to modify blocks or elements.
-  CSS class will be formed by added two dashes to block’s or element’s class name.
-  Example: <span class="highlight">.block--mod</span> or <span class="highlight">.block__elem--mod</span>
-  Modifier naming can also have a single dash. Example: <span class="highlight">.Box__row--gray-bg</span>
-</p>
-<p>
-  We should use class name selector only, ids and tag names should not be used. CSS code
-  should be independent from all other
-  blocks and html elements.
-</p>
-
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;ul class="Nav"&gt;
+                <div class="Block__code">
+                  <span>HTML:</span>
+                  <pre>
+&lt;ul class="Nav"&gt;
   &lt;li class="nav__item nav__item--active"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
   &lt;li class="nav__item"&gt;...&lt;/nav&gt;
-&lt;/ul></pre>
-</div>
+&lt;/ul></pre
+                  >
+                </div>
 
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
+                <div class="Block__code">
+                  <span>SCSS:</span>
+                  <pre>
+// Here ".Nav" class selector is a Block and ".Nav__item" is an Element
 .Nav{
   padding: 10px 0;
   @include e(item){
@@ -288,13 +300,14 @@ Blocks can be nested with other blocks but they are independent to each other wi
       font-weight: bold;
     }
   }
-}</pre>
-</div>
+}</pre
+                  >
+                </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<p>Output is completely independent from the parent block and element class selectors.</p>
-<pre>
+                <div class="Block__code">
+                  <span>CSS Output:</span>
+                  <p>Output is completely independent from the parent block and element class selectors.</p>
+                  <pre>
 .Nav {
   padding: 10px 0;
 }
@@ -307,10 +320,10 @@ Blocks can be nested with other blocks but they are independent to each other wi
 .Nav__item--active{
   color: blue;
   font-weight: bold;
-}</pre>
-</div>
-
-</div>
+}</pre
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -323,46 +336,54 @@ Blocks can be nested with other blocks but they are independent to each other wi
               <h3>rem function</h3>
               <p>Convert pixel unit into rem.</p>
 
-<div class="Block__code">
-<span>Usage(SCSS):</span>
-<pre>header{
+              <div class="Block__code">
+                <span>Usage(SCSS):</span>
+                <pre>
+header{
   padding: rem(20px) rem(30px);
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>Alternative(SCSS):</span>
-<pre>header{
+              <div class="Block__code">
+                <span>Alternative(SCSS):</span>
+                <pre>
+header{
   padding: rem(20) rem(30);
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<pre>header{
+              <div class="Block__code">
+                <span>CSS Output:</span>
+                <pre>
+header{
   padding: 1.25rem 1.875rem; //base font size of 16px
-}</pre>
-</div>
-
-</div>
+}</pre
+                >
+              </div>
+            </div>
             <div class="Block__segment">
               <h3>pntg function</h3>
               <p>Convert pixel unit to percentage.</p>
 
-<div class="Block__code">
-<span>Usage(SCSS):</span>
-<pre>.box{
+              <div class="Block__code">
+                <span>Usage(SCSS):</span>
+                <pre>
+.box{
   width: pntg(300,768); //First parameter is target width and second parameter is context width
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<pre>.box{
+              <div class="Block__code">
+                <span>CSS Output:</span>
+                <pre>
+.box{
   width: 39.0625%;
-}</pre>
-</div>
-
+}</pre
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -374,18 +395,21 @@ Blocks can be nested with other blocks but they are independent to each other wi
 
             <div class="Block__segment">
               <h3>Mapping background colors to elements:</h3>
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;div&gt;
+              <div class="Block__code">
+                <span>HTML:</span>
+                <pre>
+&lt;div&gt;
   &lt;button class="btn btn--default"&gt;Default&lt;/button&gt;
   &lt;button class="btn btn--success"&gt;Succes&lt;/button&gt;
   &lt;button class="btn btn--error"&gt;Error&lt;/button&gt;
   &lt;button class="btn btn--warning"&gt;Warning&lt;/button&gt;
-&lt;/div&gt;</pre>
-</div>
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Declare map for UI colors
+&lt;/div&gt;</pre
+                >
+              </div>
+              <div class="Block__code">
+                <span>SCSS:</span>
+                <pre>
+// Declare map for UI colors
 $ui-colors: (
   default: $blue,
   success: $success,
@@ -412,12 +436,14 @@ $ui-colors: (
   font-weight: bold;
   @include bg-colors($ui-colors);
 }
-</pre>
-</div>
+</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>CSS Output:</span>
-<pre>.btn{
+              <div class="Block__code">
+                <span>CSS Output:</span>
+                <pre>
+.btn{
   padding: 10px 15px;
   border: 0;
   border-radius: 2px;
@@ -439,26 +465,27 @@ $ui-colors: (
 
 .btn--warning{
   background: yellow;
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-  <span>Example:</span>
-  <div>
-    <button class="btn btn--default">Default</button>
-    <button class="btn btn--success">Success</button>
-    <button class="btn btn--error">Error</button>
-    <button class="btn btn--warning">Warning</button>
-  </div>
-</div>
-
+              <div class="Block__code">
+                <span>Example:</span>
+                <div>
+                  <button class="btn btn--default">Default</button>
+                  <button class="btn btn--success">Success</button>
+                  <button class="btn btn--error">Error</button>
+                  <button class="btn btn--warning">Warning</button>
+                </div>
+              </div>
             </div>
             <div class="Block__segment">
               <h3>Using nested maps:</h3>
 
-<div class="Block__code">
-<span>HTML:</span>
-<pre>&lt;div class="Palette__wrap"&gt;
+              <div class="Block__code">
+                <span>HTML:</span>
+                <pre>
+&lt;div class="Palette__wrap"&gt;
   &lt;div class="gray--dark"&gt;Dark&lt;/div&gt;
   &lt;div class="gray--base"&gt;Base&lt;/div&gt;
   &lt;div class="gray--light"&gt;Light&lt;/div&gt;&lt;/div&gt;
@@ -467,12 +494,14 @@ $ui-colors: (
   &lt;div class="blue--dark"&gt;Dark&lt;/div&gt;
   &lt;div class="blue--base"&gt;Base&lt;/div&gt;
   &lt;div class="blue--light"&gt;Light&lt;/div&gt;
-&lt;/div&gt;</pre>
-</div>
+&lt;/div&gt;</pre
+                >
+              </div>
 
-<div class="Block__code">
-<span>SCSS:</span>
-<pre>// Nested Map:
+              <div class="Block__code">
+                <span>SCSS:</span>
+                <pre>
+// Nested Map:
 $palettes: (
 	gray-shades: (
 	  base: $gray,
@@ -509,74 +538,46 @@ $palettes: (
     @extend %palette-props;
     background: palette(blue-shades, light);
   }
-}</pre>
-</div>
+}</pre
+                >
+              </div>
 
-<div class="Block__code">
-  <span>Example of generated palette:</span>
-  <div class="Palette__wrap">
-    <div class="gray--dark">Dark</div>
-    <div class="gray--base">Base</div>
-    <div class="gray--light">Light</div>
-  </div>
+              <div class="Block__code">
+                <span>Example of generated palette:</span>
+                <div class="Palette__wrap">
+                  <div class="gray--dark">Dark</div>
+                  <div class="gray--base">Base</div>
+                  <div class="gray--light">Light</div>
+                </div>
 
-  <div class="Palette__wrap">
-    <div class="blue--dark">Dark</div>
-    <div class="blue--base">Base</div>
-    <div class="blue--light">Light</div>
-  </div>
-</div>
-
+                <div class="Palette__wrap">
+                  <div class="blue--dark">Dark</div>
+                  <div class="blue--base">Base</div>
+                  <div class="blue--light">Light</div>
+                </div>
+              </div>
             </div>
             <div class="Block__segment">
               <div class="container">
                 <h2>Using grids</h2>
                 <div class="row">
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
-                  <div class="col-xs-1">
-                    col-xs-1
-                  </div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
+                  <div class="col-xs-1">col-xs-1</div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
-                  <div class="col-sm-2 col-md-4 col-lg-8">
-                    col-responsive
-                  </div>
-                  <div class="col-sm-10 col-md-8 col-lg-4">
-                    col-responive-second
-                  </div>
+                  <div class="col-sm-2 col-md-4 col-lg-8">col-responsive</div>
+                  <div class="col-sm-10 col-md-8 col-lg-4">col-responive-second</div>
                 </div>
               </div>
             </div>
@@ -620,11 +621,11 @@ $themes: (
 h3{
   margin-bottom: 10px;
   display: inline-block;
-                  
+
   @include themify(theme-type(color)){
     color: theme-property(heading-color);
   }
-                  
+
   @include themify(theme-type(size)){
     font-size: theme-property(heading-font-size);
   }
@@ -650,45 +651,49 @@ h3{
                 </div>
                 <div class="snippet">
                   <h2 class="snippet__title">Theming demo</h2>
-                  <p class="snippet__paragraph">This is a theming demo with SASS. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+                  <p class="snippet__paragraph">
+                    This is a theming demo with SASS. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                    Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </main>
-    <footer>
-      <div class="container">
-        <div class="pull-left">
-          <a href="https://github.com/sshikhrakar/Sass-Starter">Github</a>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="pull-left">
+            <a href="https://github.com/sshikhrakar/Sass-Starter">Github</a>
+          </div>
+          <div class="pull-right">
+            <span>By Shirish Shikhrakar&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Sass Starter</span>
+          </div>
         </div>
-        <div class="pull-right">
-          <span>By Shirish Shikhrakar&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Sass Starter</span>
-        </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  <script>
-    let colorClass = "theme-default";
-    let sizeClass = "theme-comfortable";
+    <script>
+      let colorClass = 'theme-default';
+      let sizeClass = 'theme-comfortable';
 
-    let body = document.getElementsByTagName('body')[0];
+      let body = document.getElementsByTagName('body')[0];
 
-    let selectColor = document.getElementById('selectColor');
-    let selectSize = document.getElementById('selectSize');
+      let selectColor = document.getElementById('selectColor');
+      let selectSize = document.getElementById('selectSize');
 
-    selectColor.addEventListener('change', (e) => {
-      colorClass = 'theme-' + e.target.value.toLowerCase();
-      body.className = colorClass +  ' ' + sizeClass;
-    });
+      selectColor.addEventListener('change', (e) => {
+        colorClass = 'theme-' + e.target.value.toLowerCase();
+        body.className = colorClass + ' ' + sizeClass;
+      });
 
-    selectSize.addEventListener('change', (e) => {
-      sizeClass = 'theme-' + e.target.value.toLowerCase();
-      body.className = colorClass +  ' ' + sizeClass;
-    });
-
-
-  </script>
-</body>
+      selectSize.addEventListener('change', (e) => {
+        sizeClass = 'theme-' + e.target.value.toLowerCase();
+        body.className = colorClass + ' ' + sizeClass;
+      });
+    </script>
+  </body>
 </html>
